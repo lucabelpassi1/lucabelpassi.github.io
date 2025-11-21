@@ -41,8 +41,8 @@ a {
 
 .hero-image {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 500px; /* altezza fissa, adatta al tuo layout */
+  object-fit: cover; /* mantiene proporzioni e ritaglia se serve */
 }
 
 .hero-text {
