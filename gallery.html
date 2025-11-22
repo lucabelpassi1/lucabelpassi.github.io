@@ -1,81 +1,111 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>GALLERY | LUCA BELPASSI</title>
-<link rel="stylesheet" href="styles.css" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GALLERY | LUCA BELPASSI</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="site-header">
-  <h1 class="site-title">GALLERY</h1>
-  <nav class="site-nav">
-    <a href="index.html">HOME</a>
-    <a href="gallery.html">GALLERY</a>
-    <a href="about.html">ABOUT</a>
-    <a href="contact.html">CONTACT</a>
-  </nav>
-</header>
+  <div class="site-wrap">
 
-<section class="gallery-grid">
-  <div class="photo"><img src="img/photo1.jpg" alt="Foto 1"></div>
-  <div class="photo"><img src="img/photo2.jpg" alt="Foto 2"></div>
-  <div class="photo"><img src="img/photo3.jpg" alt="Foto 3"></div>
-  <div class="photo"><img src="img/photo4.jpg" alt="Foto 4"></div>
-  <div class="photo"><img src="img/photo5.jpg" alt="Foto 5"></div>
-  <div class="photo"><img src="img/photo6.jpg" alt="Foto 6"></div>
-</section>
+    <header class="site-header">
+      <div class="brand">LUCA BELPASSI</div>
+      <nav class="site-nav">
+        <a href="index.html">HOME</a>
+        <a href="gallery.html" aria-current="page">GALLERY</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </header>
 
-<footer class="site-footer">
-  <p>&copy; 2025 Luca Belpassi</p>
-</footer>
+
+    <main>
+      <section class="divider"></section>
+      <section class="gallery-header">
+        <h1>Gallery</h1>
+        <p>My work for <i>Ottica Belpassi</i></p>
+      </section>
+
+      <section class="masonry-wrap">
+        <div class="masonry">
+
+          <!-- Esempio: miniature ridotte + FULL RES -->
+           <figure class="masonry-item">
+            <img src="img/small/3.jpg" alt="Foto 3"loading="lazy">
+          </figure>
+
+          <figure class="masonry-item">
+            <img src="img/small/1alt.jpg" loading="lazy">
+          </figure>
+          
+          <figure class="masonry-item">
+            <img src="img/small/5.jpg" loading="lazy">
+          </figure>
+
+          <figure class="masonry-item">
+            <img src="img/small/oriz1.jpg" loading="lazy">
+          </figure>
+
+          <figure class="masonry-item">
+            <img src="img/small/10.jpg" loading="lazy">
+          </figure>
+
+          <figure class="masonry-item">
+            <img src="img/small/4.jpg" loading="lazy">
+          </figure>
+
+          <figure class="masonry-item">
+            <img src="img/small/oriz4.jpg" loading="lazy">
+          </figure>
+
+          <figure class="masonry-item">
+            <img src="img/small/2.jpg" loading="lazy">
+          </figure>
+
+          <figure class="masonry-item">
+            <img src="img/small/8.jpg" loading="lazy">
+          </figure>
+
+          <figure class="masonry-item">
+            <img src="img/small/6.jpg" loading="lazy">
+          </figure>
+          
+          <!-- Duplica questo blocco per ogni foto -->
+        </div>
+      </section>
+
+      <!-- LIGHTBOX -->
+      <div id="lightbox" class="lightbox" aria-hidden="true">
+        <button class="lightbox-close">×</button>
+        <button class="lightbox-prev">‹</button>
+        <div class="lightbox-content">
+          <img id="lightbox-img" src="" alt="">
+        </div>
+        <button class="lightbox-next">›</button>
+      </div>
+
+    </main>
+
+    <footer class="site-footer">
+    <section class="divider"></section>
+
+      <div class="footer-inner">
+        <p>© 2025 Luca Belpassi — Photographer</p>
+        <a href="https://instagram.com/lucabelpassi" target="_blank" class="footer-ig" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M7 2C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2H7ZM18 6C18.55 6 19 6.45 19 7C19 7.55 18.55 8 18 8C17.45 8 17 7.55 17 7C17 6.45 17.45 6 18 6ZM12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8Z"
+                  fill="#111"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+<script src="js/lightbox.js"></script>
+
 </body>
-<!-- Overlay carosello -->
-<div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img class="lightbox-img" src="">
-  <a class="prev">&#10094;</a>
-  <a class="next">&#10095;</a>
-</div>
-<script>
-const images = document.querySelectorAll('.photo img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.querySelector('.lightbox-img');
-const closeBtn = document.querySelector('.lightbox .close');
-const nextBtn = document.querySelector('.lightbox .next');
-const prevBtn = document.querySelector('.lightbox .prev');
-
-let currentIndex = 0;
-
-// Apri lightbox
-images.forEach((img, index) => {
-  img.addEventListener('click', () => {
-    lightbox.style.display = 'flex';
-    lightboxImg.src = img.src;
-    currentIndex = index;
-  });
-});
-
-// Chiudi lightbox
-closeBtn.addEventListener('click', () => {
-  lightbox.style.display = 'none';
-});
-
-// Funzioni frecce
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % images.length;
-  lightboxImg.src = images[currentIndex].src;
-});
-
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  lightboxImg.src = images[currentIndex].src;
-});
-
-// Chiudi cliccando fuori immagine
-lightbox.addEventListener('click', (e) => {
-  if(e.target === lightbox) lightbox.style.display = 'none';
-});
-</script>
 </html>

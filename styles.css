@@ -1,198 +1,326 @@
-/* Reset di base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family:'Montserrat',sans-serif;
+  color:#111;
+  background:#fff;
 }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  color: #111;
-  background: #fefefe;
-  line-height: 1.6;
+/* -------------- HEADER -------------- */
+.site-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 24px;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:20px 0;
+  position:sticky;
+  top:0;
+  background:#fff;
+  z-index:100;
 }
 
-.site-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  position: sticky;
-  top: 0;
-  background: rgba(255,255,255,0.95);
-  z-index: 10;
-  border-bottom: 1px solid #eee;
-}
+.brand{font-weight:700;font-size:1rem;letter-spacing:1px}
 
-.site-title {
-  font-size: 1.8rem;
-  font-weight: 700;
+.site-nav a{
+  margin-left:18px;
+  font-weight:600;
+  font-size:0.9rem;
+  text-decoration:none;
+  color:#222;
+  opacity:.9;
 }
+.site-nav a[aria-current="page"]{opacity:.45}
 
-.site-nav a {
-  margin-left: 20px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-}
-
-.site-nav a:hover {
-  color: #555;
-}
-
+/* -------------- HERO -------------- */
 .hero {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* full screen hero */
-  overflow: hidden;
-}
-
-.hero-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.hero-image:hover {
-  transform: scale(1.02);
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-  backdrop-filter: blur(4px);
-  padding: 20px 40px;
-}
-
-.hero-text h2 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-
-.hero-text p {
-  font-size: 1.2rem;
-  font-weight: 400;
-}
-
-.preview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  padding: 60px 40px;
+  grid-template-columns: 1fr 1.2fr; /* Diamo un po' più spazio all'immagine */
+  gap: 40px;
+  align-items: center;
+  padding: 80px 0; /* Più respiro verticale */
+  min-height: 80vh; /* Occupa buona parte dello schermo */
 }
 
-.preview-grid img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  transition: transform 0.3s ease, filter 0.3s ease;
+.hero-inner h1 {
+  font-size: 4rem; /* Molto più grande per impatto */
+  margin: 10px 0 20px 0;
+  font-weight: 700;
+  letter-spacing: -1px; /* Più compatto ed elegante */
+  line-height: 1.1;
 }
 
-.preview-grid img:hover {
-  transform: scale(1.05);
-  filter: brightness(1.05);
-  cursor: pointer;
-}
-
-.gallery-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* spazio tra foto */
-  padding: 60px 40px;
-}
-
-.photo {
-  flex: 1 1 200px; /* larghezza minima 200px, cresce se c'è spazio */
-  position: relative;
-  overflow: hidden;
-}
-
-.photo img {
-  width: 100%;
-  height: auto; /* mantiene aspect ratio */
+.hero-subtitle {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: #666;
   display: block;
+  margin-bottom: 10px;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 30px;
+  max-width: 400px; /* Evita righe troppo lunghe */
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  height: 550px; /* Un po' più alta */
+  object-fit: cover;
+  border-radius: 0; /* Coerente con la tua scelta Masonry spigolosa */
+  box-shadow: 20px 20px 0px rgba(0,0,0,0.05); /* Dettaglio grafico sottile */
+}
+
+/* Link testuale accanto al bottone */
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.link-text {
+  text-decoration: none;
+  color: #111;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.link-text:hover { opacity: 0.6; }
+
+.divider{
+  width: 100%;
+  height: 1px;
+  background: #333;
+  opacity:.2;
+  margin: 10px 0;
+}
+
+/* -------------- BUTTON -------------- */
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  
+  /* BORDO: Lo mettiamo sempre, così il pulsante non cambia dimensione all'hover */
+  border: 1px solid #111; 
+  
+  text-decoration: none;
+  font-size: .8rem;
+  letter-spacing: .5px;
+  
+  /* STATO BASE: Sfondo Nero, Scritta Bianca */
+  background-color: #111;
+  color: #fff;
+  
+  /* TRANSIZIONE: Anima tutte le proprietà (colore e sfondo) in 0.2 secondi */
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  /* STATO HOVER: Sfondo Trasparente (o bianco), Scritta Nera */
+  background-color: transparent; 
+  color: #111;
+  
+  /* Il bordo #111 rimane quello definito sopra, quindi ora si vedrà solo il contorno */
   cursor: pointer;
-  transition: transform 0.3s ease;
 }
 
-.photo img:hover {
-  transform: scale(1.03);
+/* -------------- ANIMAZIONI D'INGRESSO -------------- */
+
+/* Fade In semplice */
+.fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+  opacity: 0;
 }
 
-.site-footer {
-  text-align: center;
-  padding: 40px 20px;
-  font-size: 0.9rem;
-  color: #555;
-  border-top: 1px solid #eee;
+/* Fade In dal basso (per i testi) */
+.fade-in-up {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
+/* Ritardo per l'immagine */
+.fade-in-delay {
+  animation: fadeIn 1.2s ease-out 0.3s forwards; /* Parte dopo 0.3s */
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------- MASONRY PINTEREST STYLE -------------- */
+
+.masonry-wrap {
+  width: 100%;
+  margin: 0 auto;
+  padding: 40px 0; /* Spazio verticale dalla header/footer */
+}
+
+.masonry {
+  /* Questo crea le colonne stile Pinterest */
+  column-count: 3;
+  column-gap: 20px; /* Spazio orizzontale tra le colonne */
+  
+  /* Bugfix per alcuni browser che tagliano il contenuto */
+  orphans: 1;
+  widows: 1;
+}
+
+.masonry-item {
+  /* RESET FONDAMENTALE */
+  margin: 0; /* Toglie il margine predefinito fastidioso di <figure> */
+  
+  /* I tuoi stili funzionali */
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  display: block; 
+  position: relative;
+  
+  /* Spazio sotto per staccare le foto */
+  margin-bottom: 20px; 
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto; /* Mantiene l'aspect ratio originale (verticale o orizzontale) */
+  display: block; /* Rimuove lo spazio bianco fantasma sotto le img */
+  
+  /* STILE RICHIESTO */
+  border-radius: 0; /* Nessun bordo tondo */
+  box-shadow: none; /* Piatto di default */
+  
+  /* Transizione fluida per l'hover */
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: zoom-in;
+}
+
+/* EFFETTO HOVER */
+.masonry-item img:hover {
+  /* Spostamento in alto di 3px */
+  transform: translateY(-3px);
+  z-index: 2; /* Assicura che l'immagine in hover stia "sopra" */
+}
+
+/* -------------- MOBILE UPDATE -------------- */
+@media(max-width: 900px){
+  .hero {
+    grid-template-columns: 1fr; /* Una colonna */
+    text-align: center;
+    padding: 40px 0;
+    gap: 30px;
+    min-height: auto;
+  }
+  
+  .hero-inner h1 { font-size: 2.8rem; }
+  .hero-desc { margin: 0 auto 30px auto; }
+  .hero-cta { justify-content: center; }
+  
+  .hero-image-wrap img {
+    height: 350px; /* Più piccola su mobile */
+    box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
+  }
+}
+
+/* -------------- LIGHTBOX FIXED -------------- */
 .lightbox {
-  display: none;
   position: fixed;
-  z-index: 100;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.9);
+  background: rgba(255, 255, 255, 0.8); /* Sfondo più scuro per focus */
+  display: none; /* Gestito da JS */
+  
+  /* Flexbox per centrare perfettamente tutto */
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+/* Il contenitore dell'immagine */
+.lightbox-content {
+  display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Cliccando ai lati chiude la lightbox */
 }
 
-.lightbox-img {
-  max-width: 90%;
-  max-height: 90%;
+.lightbox-content img {
+  /* QUI STA LA MAGIA: Non superare mai il 90% dello SCHERMO */
+  max-width: 90vw; 
+  max-height: 85vh; 
   object-fit: contain;
+  pointer-events: auto; /* Riattiva i click sull'immagine */
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
 }
 
-.lightbox .close {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 3rem;
-  color: #fff;
-  cursor: pointer;
-}
-
-.lightbox .prev,
-.lightbox .next {
-  position: absolute;
-  top: 50%;
-  font-size: 3rem;
-  color: #fff;
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute; /* Meglio absolute dentro il fixed */
+  background: transparent;
+  border: none;
+  color: #111;
+  font-size: 2rem;
   padding: 20px;
   cursor: pointer;
-  user-select: none;
-  transform: translateY(-50%);
+  z-index: 2001;
+  transition: opacity 0.2s;
 }
 
-.lightbox .prev { left: 20px; }
-.lightbox .next { right: 20px; }
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  opacity: 0.7;
+}
 
-/* Mobile responsive */
-@media (max-width: 768px) {
-  .hero-text h2 {
-    font-size: 1.8rem;
-  }
-  .hero-text p {
-    font-size: 1rem;
-  }
-  .preview-grid, .gallery-grid {
-    padding: 40px 20px;
-  }
-  .preview-grid img {
-    height: 200px;
-  }
+.lightbox-close { top: 10px; right: 10px; }
+.lightbox-prev { left: 10px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 10px; top: 50%; transform: translateY(-50%); }
+
+/* -------------- FOOTER -------------- */
+.site-footer{
+  padding:50px 0;
+  text-align:center;
+}
+
+.footer-inner{
+  opacity:.75;
+  font-size:.8rem;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  align-items:center;
+}
+
+.footer-ig svg{opacity:.7;transition:.25s}
+.footer-ig:hover svg{opacity:1}
+
+/* MEDIA QUERIES (Restano simili) */
+@media(max-width: 900px) {
+  .masonry { column-count: 2; }
+}
+@media(max-width: 600px) {
+  .masonry { column-count: 1; }
+  /* Tasti più piccoli su mobile */
+  .lightbox-prev, .lightbox-next { font-size: 1.5rem; padding: 10px; } 
 }

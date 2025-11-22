@@ -1,40 +1,61 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>LUCA BELPASSI | Photography</title>
-<link rel="stylesheet" href="styles.css" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>HOME | LUCA BELPASSI</title>
+  <meta name="description" content="Portfolio fotografico di Luca Belpassi. Ritratti, fotografia di viaggio e progetti editoriali.">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="img/favicon.png"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header class="site-header">
-  <h1 class="site-title">LUCA BELPASSI</h1>
-  <nav class="site-nav">
-    <a href="index.html">HOME</a>
-    <a href="gallery.html">GALLERY</a>
-    <a href="about.html">ABOUT</a>
-    <a href="contact.html">CONTACT</a>
-  </nav>
-</header>
+  <div class="site-wrap">
 
-<section class="hero">
-  <img src="img/hero.JPG" alt="Hero" class="hero-image">
-  <div class="hero-text">
-    <h2>Benvenuto nel mio portfolio fotografico</h2>
-    <p>Scorri per vedere alcuni dei miei lavori</p>
+    <header class="site-header fade-in">
+      <div class="brand">LUCA BELPASSI</div>
+      <nav class="site-nav">
+        <a href="index.html" aria-current="page">HOME</a>
+        <a href="gallery.html">GALLERY</a>
+        <a href="about.html">ABOUT</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-inner fade-in-up">
+          <span class="hero-subtitle">PORTFOLIO</span>
+          <h1>Photography</h1>
+          <p class="hero-desc">Chasing light, telling stories.<br>See the world through my eyes.</p>
+          
+          <div class="hero-cta">
+            <a class="btn" href="gallery.html">View gallery</a>
+            <a class="link-text" href="contact.html">Get in touch &rarr;</a>
+          </div>
+        </div>
+
+        <figure class="hero-image-wrap fade-in-delay">
+          <img src="img/hero.jpg" alt="Ritratto artistico in bianco e nero" loading="eager">
+        </figure>
+      </section>
+    </main>
+
+    <footer class="site-footer fade-in">
+      <section class="divider"></section>
+      <div class="footer-inner">
+        <p>© 2025 Luca Belpassi — Photographer</p>
+        <a href="https://instagram.com/lucabelpassi" target="_blank" class="footer-ig" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M7 2C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2H7ZM18 6C18.55 6 19 6.45 19 7C19 7.55 18.55 8 18 8C17.45 8 17 7.55 17 7C17 6.45 17.45 6 18 6ZM12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8Z"
+                  fill="#111"/>
+          </svg>
+        </a>
+      </div>
+    </footer>
+
   </div>
-</section>
-
-<section class="preview-grid">
-  <a href="gallery.html"><img src="img/photo1.jpg" alt="Foto 1"></a>
-  <a href="gallery.html"><img src="img/photo2.jpg" alt="Foto 2"></a>
-  <a href="gallery.html"><img src="img/photo3.jpg" alt="Foto 3"></a>
-  <a href="gallery.html"><img src="img/photo4.jpg" alt="Foto 4"></a>
-</section>
-
-<footer class="site-footer">
-  <p>&copy; 2025 Luca Belpassi</p>
-</footer>
 </body>
 </html>
