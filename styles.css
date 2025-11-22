@@ -6,35 +6,65 @@ body{
   background:#fff;
 }
 
-/* -------------- HEADER -------------- */
-.site-wrap{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 24px;
+/* -------------- HEADER (Full Width & Glass Effect) -------------- */
+
+/* Questo serve per il contenitore principale dei contenuti, non toccarlo */
+.site-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
-.site-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:20px 0;
-  position:sticky;
-  top:0;
-  background:#fff;
-  z-index:100;
+/* La barra che attraversa tutto lo schermo */
+.site-header {
+  width: 100%; /* Occupa tutto lo schermo */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  /* EFFETTO VETRO SMERIGLIATO */
+  background: rgba(255, 255, 255, 0.85); /* Bianco all'85% di opacità */
+  backdrop-filter: blur(12px); /* Sfoca tutto ciò che passa sotto */
+  -webkit-backdrop-filter: blur(12px); /* Per Safari */
+  
+  /* Un bordo sottilissimo sotto per separarla dal contenuto */
+  border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-.brand{font-weight:700;font-size:1rem;letter-spacing:1px}
-
-.site-nav a{
-  margin-left:18px;
-  font-weight:600;
-  font-size:0.9rem;
-  text-decoration:none;
-  color:#222;
-  opacity:.9;
+/* Il contenitore interno che ri-allinea Logo e Menu al centro */
+.header-inner {
+  width: 1200px; /* Stessa larghezza del site-wrap */
+  margin: 0 auto;    /* Centrato */
+  padding: 20px 24px; /* Spaziatura interna */
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.site-nav a[aria-current="page"]{opacity:.45}
+
+.brand {
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.site-nav a {
+  margin-left: 18px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  color: #222;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.site-nav a:hover {
+  opacity: 1;
+}
+
+.site-nav a[aria-current="page"] {
+  opacity: 0.4; /* Più chiaro per indicare "sei qui" */
+}
 
 /* -------------- HERO -------------- */
 .hero {
