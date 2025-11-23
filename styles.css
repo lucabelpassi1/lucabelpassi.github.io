@@ -368,44 +368,48 @@ body{
 /* --- STEP 2: Tablet Verticali & Mobile (Sotto 768px) --- */
 @media (max-width: 768px) {
 
-  /* 1. Spazio per la barra che diventa più alta */
   body {
     padding-top: 110px; 
   }
 
-  /* 2. CONTENITORE: Tutto impilato e a sinistra */
+  /* CONTENITORE: Tutto allineato a sinistra */
   .header-inner {
-    flex-direction: column; /* Mette gli elementi uno sotto l'altro */
-    align-items: flex-start; /* <--- FORZA L'ALLINEAMENTO A SINISTRA */
+    flex-direction: column;
+    align-items: flex-start; /* A sinistra */
     justify-content: flex-start;
-    gap: 10px; /* Spazio verticale tra Logo e Menu */
-    padding: 15px 24px; /* Un po' di aria ai lati */
+    gap: 8px; /* Meno spazio tra nome e menu */
+    padding: 15px 24px;
   }
   
-  /* 3. LOGO: Resettiamo margini e larghezze */
+  /* --- FIX FONT --- */
+  
+  /* 1. IL NOME: Deve essere grande e ben visibile */
   .brand {
     width: auto;
     margin: 0;
     text-align: left;
+    font-size: 1.3rem; /* Aumentato (era 1rem) */
+    font-weight: 800; /* Più cicciotto */
   }
   
-  /* 4. MENU: A sinistra, con i link che vanno a capo se serve */
+  /* 2. IL MENU: Più piccolo e leggero */
   .site-nav {
     width: 100%;
-    justify-content: flex-start; /* Allinea i link a sinistra */
-    flex-wrap: wrap; /* Se sono troppi, vanno a capo ordinatamente */
-    gap: 20px; /* Spazio tra le parole */
-    margin-top: 5px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 15px; /* Spazio tra le parole */
+    margin-top: 0;
   }
 
-  /* 5. LINK: Stile testo mobile */
   .site-nav a {
-    margin-left: 0; /* Via il margine desktop */
-    margin-right: 0; 
-    font-size: 0.75rem; /* Testo leggibile */
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 0.7rem; /* Diminuito leggermente per eleganza */
+    font-weight: 600;  /* Meno pesante del brand */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 }
-
 
 /* --- STEP 3: Mobile Stretto (Sotto 600px) --- */
 @media (max-width: 600px) {
