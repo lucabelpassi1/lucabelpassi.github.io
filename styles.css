@@ -564,4 +564,17 @@ body{
   .hero-inner h1 {
     font-size: 2.2rem;
   }
+  
+  /* --- FIX TESTO GALLERY MOBILE --- */
+  
+  /* Rimpicciolisce "Commissioned series" */
+  .gallery-header p {
+    font-size: 0.9rem !important; 
+    line-height: 1.3 !important;
+  }
+  
+  /* Rimpicciolisce "Eyewear Campaign" */
+  .gallery-header p span {
+    font-size: 1.1rem !important; 
+  }
 }
