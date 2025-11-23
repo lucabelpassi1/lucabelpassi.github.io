@@ -439,6 +439,67 @@ body{
   color: #fff;
 }
 
+/* -------------- LIGHTBOX THUMBNAILS -------------- */
+
+/* Regoliamo l'immagine grande per lasciare spazio alle miniature */
+.lightbox-content img {
+  max-height: 75vh; /* Ridotto da 85vh per farci stare le thumbs */
+  transition: transform 0.3s ease;
+}
+
+/* Contenitore della striscia in basso */
+.lightbox-thumbs {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  height: 80px; /* Altezza della striscia */
+  
+  display: flex;
+  justify-content: center; /* Centrato se poche foto */
+  align-items: center;
+  gap: 10px;
+  
+  padding: 0 20px;
+  overflow-x: auto; /* Abilita lo scroll orizzontale se ci sono tante foto */
+  scrollbar-width: none; /* Nasconde la scrollbar (Firefox) */
+  z-index: 2002;
+}
+
+/* Nasconde scrollbar (Chrome/Safari) */
+.lightbox-thumbs::-webkit-scrollbar {
+  display: none;
+}
+
+/* Stile della singola miniatura */
+.lightbox-thumbs img {
+  height: 60px; /* Altezza fissa */
+  width: auto;  /* Larghezza automatica */
+  object-fit: cover;
+  border-radius: 2px;
+  cursor: pointer;
+  
+  /* EFFETTO SFOCATO DEFAULT (Non attive) */
+  opacity: 0.5;
+  filter: blur(1.5px) grayscale(60%); /* Sfocate e leggermente grigie */
+  transition: all 0.3s ease;
+  transform: scale(0.9);
+}
+
+/* Stile della miniatura ATTIVA */
+.lightbox-thumbs img.active-thumb {
+  opacity: 1;
+  filter: blur(0) grayscale(0%); /* Nitida e a colori */
+  border: 2px solid #fff; /* Bordino bianco per evidenziarla */
+  transform: scale(1.1); /* Leggermente più grande */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+/* Hover sulle non attive */
+.lightbox-thumbs img:hover {
+  opacity: 1;
+  filter: blur(0);
+}
 
 /* ========================================= */
 /* RESPONSIVE DESIGN             */
@@ -559,12 +620,20 @@ body{
     font-size: 1.5rem; 
     padding: 10px; 
   }
+
+  /* Su mobile le miniature rubano troppo spazio, le nascondiamo o rimpiccioliamo */
+  .lightbox-thumbs {
+    display: none; /* Meglio nasconderle su schermi piccoli per dare spazio alla foto */
+  }
+  .lightbox-content img {
+    max-height: 85vh; /* Recuperiamo lo spazio */
+  }
   
   /* 4. HERO: Titolo compatto */
   .hero-inner h1 {
     font-size: 2.2rem;
   }
-  
+
   /* --- FIX TESTO GALLERY MOBILE --- */
   
   /* Rimpicciolisce "Commissioned series" */
