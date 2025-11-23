@@ -7,6 +7,33 @@ body{
   padding-top: 80px;
 }
 
+/* -------------- CUSTOM SCROLLBAR -------------- */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #333 #fff;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px; /* Spessore */
+}
+
+::-webkit-scrollbar-track {
+  background: #fff; /* Sfondo della barra */
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333; /* Il "cursore" */
+  border-radius: 0; /* Angoli arrotondati */
+  border: 2px solid #fff; /* Crea un effetto "staccato" elegante */
+}
+  ::-webkit-scrollbar-thumb:hover {
+  background-color: #000; /* Diventa più nera quando la prendi */
+}
+
+
 /* -------------- HEADER (Full Width) -------------- */
 
 /* Questo serve per il contenitore principale dei contenuti, non toccarlo */
@@ -42,7 +69,7 @@ body{
 
 .brand {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.5rem;
   letter-spacing: 1px;
 }
 
@@ -324,6 +351,88 @@ body{
 .footer-ig svg{opacity:.7;transition:.25s}
 .footer-ig:hover svg{opacity:1}
 
+/* -------------- ABOUT PAGE -------------- */
+.about-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: flex-start; /* Testo allineato in alto */
+  padding: 60px 0;
+}
+
+.about-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: grayscale(100%); /* Opzionale: Foto in B/N automatica */
+  transition: filter 0.5s ease;
+}
+
+.about-img img:hover {
+  filter: grayscale(0%); /* Torna a colori al passaggio del mouse */
+}
+
+.about-text h1 {
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.8; /* Molto leggibile */
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* -------------- CONTACT PAGE -------------- */
+.contact-wrap {
+  min-height: 60vh; /* Centra verticalmente nello schermo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+}
+
+.contact-wrap h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.contact-desc {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Un bottone "Outline" per l'email */
+.btn-outline {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid #111;
+  text-decoration: none;
+  color: #111;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: #111;
+  color: #fff;
+}
+
 
 /* ========================================= */
 /* RESPONSIVE DESIGN             */
@@ -352,7 +461,17 @@ body{
     box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
   }
 
-  /* 2. MASONRY: Passa a 2 colonne */
+  /* 2. ABOUT PAGE: Impila foto e testo */
+  .about-wrap {
+    grid-template-columns: 1fr; /* Una colonna */
+    gap: 40px;
+    padding: 40px 0;
+  }
+  
+  /* 3. CONTACT: Titolo più piccolo */
+  .contact-wrap h1 { font-size: 2.5rem; }
+
+  /* 4. MASONRY */
   .masonry { 
     column-count: 2; 
     column-gap: 15px;
@@ -361,6 +480,7 @@ body{
     margin-bottom: 15px;
   }
 }
+
 
 
 /* --- STEP 2: Tablet Verticali & Mobile (Sotto 768px) --- */
@@ -386,7 +506,7 @@ body{
     width: auto;
     margin: 0;
     text-align: left;
-    font-size: 1.3rem; /* Aumentato (era 1rem) */
+    font-size: 1.5rem; /* Aumentato (era 1rem) */
     font-weight: 800; /* Più cicciotto */
   }
   
