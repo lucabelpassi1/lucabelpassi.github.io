@@ -368,26 +368,37 @@ body{
 /* --- STEP 2: Tablet Verticali & Mobile Grande (Sotto 768px) --- */
 @media (max-width: 768px) {
 
-  /* 1. HEADER FIX: Impiliamo Logo e Menu */
+  /* 1. Spazio extra in alto perché il menu diventa più alto */
   body {
-    padding-top: 130px; /* Aumentiamo lo spazio perché la barra diventa più alta */
+    padding-top: 130px; 
   }
 
+  /* 2. HEADER FIX: Centratura Totale */
   .header-inner {
-    flex-direction: column; /* Logo sopra, Menu sotto */
+    flex-direction: column; /* Mette gli elementi uno sotto l'altro */
+    align-items: center;    /* <--- FONDAMENTALE: Centra orizzontalmente Logo e Menu */
+    justify-content: center;
     gap: 15px;
     padding: 15px 20px;
+    text-align: center;     /* Assicura che anche il testo interno sia centrato */
+  }
+  
+  /* Reset del Brand per essere sicuri stia al centro */
+  .brand {
+    width: 100%;
+    text-align: center;
+    margin: 0; /* Rimuove eventuali margini automatici */
   }
   
   .site-nav {
     width: 100%;
-    justify-content: center;
-    gap: 20px; /* Spazio tra i link */
+    justify-content: center; /* Centra i link dentro la nav */
+    gap: 20px;
   }
 
   .site-nav a {
-    margin-left: 0; /* Reset del margine desktop */
-    font-size: 0.75rem; /* Testo leggermente più piccolo */
+    margin-left: 0;
+    font-size: 0.75rem;
   }
 }
 
