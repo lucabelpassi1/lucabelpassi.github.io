@@ -412,23 +412,30 @@ body{
 /* --- STEP 3: Mobile Stretto (Sotto 600px) --- */
 @media (max-width: 600px) {
 
-  /* 1. MASONRY: Passa a 1 colonna (feed verticale classico) */
+  /* 1. MASONRY A 2 COLONNE */
   .masonry { 
-    column-count: 1; 
+    column-count: 2; /* Era 1, ora forziamo 2 */
+    column-gap: 10px; /* Riduciamo lo spazio tra le colonne (era 15-20px) */
   }
   
   .masonry-item {
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Meno spazio verticale tra le foto */
   }
 
-  /* 2. LIGHTBOX: Tasti più facili da toccare */
+  /* 2. OTTIMIZZAZIONE SPAZIO LATERALE */
+  /* Riduciamo il padding del contenitore principale per allargare le foto */
+  .site-wrap {
+    padding: 0 12px; /* Era 24px: recuperiamo spazio ai lati */
+  }
+
+  /* 3. LIGHTBOX: Tasti accessibili */
   .lightbox-prev, 
   .lightbox-next { 
     font-size: 1.5rem; 
     padding: 10px; 
   }
   
-  /* 3. HERO: Titolo ancora più compatto se necessario */
+  /* 4. HERO: Titolo compatto */
   .hero-inner h1 {
     font-size: 2.2rem;
   }
