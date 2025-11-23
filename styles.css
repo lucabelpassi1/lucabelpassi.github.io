@@ -545,6 +545,13 @@ body{
   .masonry-item {
     margin-bottom: 15px;
   }
+  /* Su mobile le miniature rubano troppo spazio, le nascondiamo o rimpiccioliamo */
+  .lightbox-thumbs {
+    display: none; /* Meglio nasconderle su schermi piccoli per dare spazio alla foto */
+  }
+  .lightbox-content img {
+    max-height: 85vh; /* Recuperiamo lo spazio */
+  }
 }
 
 
@@ -619,14 +626,6 @@ body{
   .lightbox-next { 
     font-size: 1.5rem; 
     padding: 10px; 
-  }
-
-  /* Su mobile le miniature rubano troppo spazio, le nascondiamo o rimpiccioliamo */
-  .lightbox-thumbs {
-    display: none; /* Meglio nasconderle su schermi piccoli per dare spazio alla foto */
-  }
-  .lightbox-content img {
-    max-height: 85vh; /* Recuperiamo lo spazio */
   }
   
   /* 4. HERO: Titolo compatto */
