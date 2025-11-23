@@ -365,40 +365,44 @@ body{
 }
 
 
-/* --- STEP 2: Tablet Verticali & Mobile Grande (Sotto 768px) --- */
+/* --- STEP 2: Tablet Verticali & Mobile (Sotto 768px) --- */
 @media (max-width: 768px) {
 
-  /* 1. Spazio extra in alto perché il menu diventa più alto */
+  /* 1. Spazio per la barra che diventa più alta */
   body {
-    padding-top: 130px; 
+    padding-top: 110px; 
   }
 
-  /* 2. HEADER FIX: Centratura Totale */
+  /* 2. CONTENITORE: Tutto impilato e a sinistra */
   .header-inner {
     flex-direction: column; /* Mette gli elementi uno sotto l'altro */
-    align-items: center;    /* <--- FONDAMENTALE: Centra orizzontalmente Logo e Menu */
-    justify-content: center;
-    gap: 15px;
-    padding: 15px 20px;
-    text-align: center;     /* Assicura che anche il testo interno sia centrato */
+    align-items: flex-start; /* <--- FORZA L'ALLINEAMENTO A SINISTRA */
+    justify-content: flex-start;
+    gap: 10px; /* Spazio verticale tra Logo e Menu */
+    padding: 15px 24px; /* Un po' di aria ai lati */
   }
   
-  /* Reset del Brand per essere sicuri stia al centro */
+  /* 3. LOGO: Resettiamo margini e larghezze */
   .brand {
-    width: 100%;
-    text-align: center;
-    margin: 0; /* Rimuove eventuali margini automatici */
+    width: auto;
+    margin: 0;
+    text-align: left;
   }
   
+  /* 4. MENU: A sinistra, con i link che vanno a capo se serve */
   .site-nav {
     width: 100%;
-    justify-content: center; /* Centra i link dentro la nav */
-    gap: 20px;
+    justify-content: flex-start; /* Allinea i link a sinistra */
+    flex-wrap: wrap; /* Se sono troppi, vanno a capo ordinatamente */
+    gap: 20px; /* Spazio tra le parole */
+    margin-top: 5px;
   }
 
+  /* 5. LINK: Stile testo mobile */
   .site-nav a {
-    margin-left: 0;
-    font-size: 0.75rem;
+    margin-left: 0; /* Via il margine desktop */
+    margin-right: 0; 
+    font-size: 0.75rem; /* Testo leggibile */
   }
 }
 
