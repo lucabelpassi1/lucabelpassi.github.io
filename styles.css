@@ -226,59 +226,55 @@ body{
   }
 }
 
-/* -------------- MASONRY PINTEREST STYLE -------------- */
+/* -------------- MASONRY PINTEREST STYLE (JS VERSION) -------------- */
 
 .masonry-wrap {
   width: 100%;
+  max-width: 1200px; /* Assicuriamo che non esploda su schermi giganti */
   margin: 0 auto;
-  padding: 40px 0; /* Spazio verticale dalla header/footer */
+  padding: 40px 0;
+  overflow: hidden; /* Pulizia */
 }
 
+/* Il contenitore griglia */
 .masonry {
-  /* Questo crea le colonne stile Pinterest */
-  column-count: 3;
-  column-gap: 20px; /* Spazio orizzontale tra le colonne */
+  /* Rimuoviamo column-count! */
+  display: block; 
   
-  /* Bugfix per alcuni browser che tagliano il contenuto */
-  orphans: 1;
-  widows: 1;
+  /* Trucco per compensare il padding degli item e allinearli a filo */
+  margin: 0 -10px; 
 }
 
+/* I blocchi delle foto */
 .masonry-item {
-  /* RESET FONDAMENTALE */
-  margin: 0; /* Toglie il margine predefinito fastidioso di <figure> */
+  /* Layout */
+  float: left; /* Necessario per Masonry base o fallback */
+  width: 33.333%; /* 3 COLONNE DI BASE (Desktop) */
   
-  /* I tuoi stili funzionali */
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  display: block; 
-  position: relative;
+  /* Spaziatura: Usiamo il padding per creare il "gap" */
+  padding: 0 10px 20px 10px; 
+  /* 0 sopra, 10px destra, 20px sotto, 10px sinistra. 
+     Risultato visivo: 20px di spazio orizzontale tra le foto */
   
-  /* Spazio sotto per staccare le foto */
-  margin-bottom: 20px; 
+  box-sizing: border-box; /* Fondamentale affinché il padding non rompa la width */
+  margin: 0;
 }
 
 .masonry-item img {
   width: 100%;
-  height: auto; /* Mantiene l'aspect ratio originale (verticale o orizzontale) */
-  display: block; /* Rimuove lo spazio bianco fantasma sotto le img */
+  height: auto;
+  display: block;
   
-  /* STILE RICHIESTO */
-  border-radius: 0; /* Nessun bordo tondo */
-  box-shadow: none; /* Piatto di default */
-  
-  /* Transizione fluida per l'hover */
+  /* Stile */
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   cursor: zoom-in;
 }
 
-/* EFFETTO HOVER */
 .masonry-item img:hover {
-  /* Spostamento in alto di 3px */
   transform: translateY(-3px);
-  z-index: 2; /* Assicura che l'immagine in hover stia "sopra" */
+  z-index: 2;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Aggiunto ombra soft all'hover */
 }
-
 
 /* -------------- LIGHTBOX FIXED -------------- */
 .lightbox {
@@ -543,7 +539,7 @@ body{
     column-gap: 15px;
   }
   .masonry-item {
-    margin-bottom: 15px;
+    width: 50%; /* 2 COLONNE su Tablet */
   }
   /* Su mobile le miniature rubano troppo spazio, le nascondiamo o rimpiccioliamo */
   .lightbox-thumbs {
@@ -606,13 +602,13 @@ body{
 @media (max-width: 600px) {
 
   /* 1. MASONRY A 2 COLONNE */
-  .masonry { 
-    column-count: 2; /* Era 1, ora forziamo 2 */
-    column-gap: 10px; /* Riduciamo lo spazio tra le colonne (era 15-20px) */
+  .masonry {
+    margin: 0 -5px; /* Riduciamo il margine negativo */
   }
   
   .masonry-item {
-    margin-bottom: 10px; /* Meno spazio verticale tra le foto */
+    width: 50%; /* RIMANE 2 COLONNE su Mobile (come richiesto) */
+    padding: 0 5px 10px 5px; /* Spazio ridotto tra le foto su mobile */
   }
 
   /* 2. OTTIMIZZAZIONE SPAZIO LATERALE */
