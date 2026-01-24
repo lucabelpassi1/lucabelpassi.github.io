@@ -527,13 +527,15 @@ body{
   .hero-cta { justify-content: center; }
   
   .hero-image-wrap img {
-    width: 100%;      /* Occupa tutta la larghezza disponibile */
-    height: auto;     /* L'altezza si calcola da sola in proporzione (niente più tagli) */
-    max-height: 450px; /* Un limite massimo per evitare che diventi altissima se la foto è verticale */
-    object-fit: contain; /* Assicura che l'intero contenuto dell'immagine sia visibile */
+    width: 100%;          /* Occupa tutta la larghezza */
     
+    /* IL TRUCCO MAGICO: */
+    aspect-ratio: 4/3;    /* Forza una forma rettangolare ma "cicciotta" */
+    object-fit: cover;    /* Taglia gli eccessi ai lati per riempire la forma */
+    height: auto;         /* Lascia che aspect-ratio comandi l'altezza */
+
+    margin-bottom: 20px;
     box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
-    margin-bottom: 20px; /* Un po' di aria sotto prima del footer/contenuto */
   }
 
   /* 2. ABOUT PAGE: Impila foto e testo */
