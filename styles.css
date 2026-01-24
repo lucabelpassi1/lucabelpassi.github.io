@@ -243,6 +243,15 @@ body{
   
   /* Trucco per compensare il padding degli item e allinearli a filo */
   margin: 0 -10px; 
+  
+  /* --- FIX "SCATTI" INIZIALI --- */
+  opacity: 0; /* Nascondi tutto all'inizio */
+  transition: opacity 0.6s ease-in-out; /* Effetto dissolvenza dolce quando appare */
+}
+
+/* Questa classe viene aggiunta dal Javascript quando le foto sono pronte */
+.masonry.loaded {
+  opacity: 1;
 }
 
 /* I blocchi delle foto */
@@ -533,11 +542,6 @@ body{
   /* 3. CONTACT: Titolo più piccolo */
   .contact-wrap h1 { font-size: 2.5rem; }
 
-  /* 4. MASONRY */
-  .masonry { 
-    column-count: 2; 
-    column-gap: 15px;
-  }
   .masonry-item {
     width: 50%; /* 2 COLONNE su Tablet */
   }
