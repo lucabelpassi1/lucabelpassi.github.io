@@ -280,9 +280,8 @@ body{
 }
 
 .masonry-item img:hover {
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   z-index: 2;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Aggiunto ombra soft all'hover */
 }
 
 /* -------------- LIGHTBOX FIXED -------------- */
