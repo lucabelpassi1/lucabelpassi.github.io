@@ -527,8 +527,13 @@ body{
   .hero-cta { justify-content: center; }
   
   .hero-image-wrap img {
-    height: 350px;
+    width: 100%;      /* Occupa tutta la larghezza disponibile */
+    height: auto;     /* L'altezza si calcola da sola in proporzione (niente più tagli) */
+    max-height: 450px; /* Un limite massimo per evitare che diventi altissima se la foto è verticale */
+    object-fit: contain; /* Assicura che l'intero contenuto dell'immagine sia visibile */
+    
     box-shadow: 10px 10px 0px rgba(0,0,0,0.05);
+    margin-bottom: 20px; /* Un po' di aria sotto prima del footer/contenuto */
   }
 
   /* 2. ABOUT PAGE: Impila foto e testo */
