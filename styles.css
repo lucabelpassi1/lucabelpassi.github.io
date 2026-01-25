@@ -606,6 +606,9 @@ body{
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
+  .project-desc {
+    column-count: 1;
+  }
 }
 
 /* --- STEP 3: Mobile Stretto (Sotto 600px) --- */
@@ -639,16 +642,94 @@ body{
     font-size: 2.2rem;
   }
 
-  /* --- FIX TESTO GALLERY MOBILE --- */
-  
-  /* Rimpicciolisce "Commissioned series" */
-  .gallery-header p {
-    font-size: 0.9rem !important; 
-    line-height: 1.3 !important;
+  /* Riduciamo leggermente il padding laterale */
+  .gallery-header {
+    padding: 20px 0 30px 0;
   }
   
-  /* Rimpicciolisce "Eyewear Campaign" */
-  .gallery-header p span {
-    font-size: 1.1rem !important; 
+  /* Il titolo del progetto (Faces & Frames) su mobile deve essere un po' più piccolo */
+  .project-title {
+    font-size: 2rem; /* Era 2.8rem su desktop */
   }
+  
+  /* Il testo descrittivo su mobile */
+  .project-desc {
+    font-size: 0.95rem; /* Leggermente più piccolo per leggere meglio */
+    line-height: 1.5;
+  }
+}
+/* -------------- NEW GALLERY HEADER (Selected Works) -------------- */
+
+.gallery-header {
+  /* Allinea tutto a sinistra */
+  text-align: left;
+  
+  /* Spaziatura verticale generosa per eleganza */
+  padding: 40px 0 20px 0; 
+  
+  /* Assicura che stia dentro i margini come le foto */
+  width: 100%; 
+  position: relative;
+}
+
+/* Il titolo principale della pagina (Selected Works) */
+.gallery-header h1 {
+  font-size: 1.6rem; /* Più piccolo del Logo (che è 1.5rem) */
+  font-weight: 600;   /* Grassetto ma non troppo pesante */
+  letter-spacing: 0.5px; /* Leggera spaziatura per eleganza */
+  color: #111;
+  margin: 0 0 30px 0; /* Ho ridotto lo spazio sotto (era 60px) */
+  line-height: 1.2;
+}
+
+/* Il blocco che contiene il testo del progetto */
+.project-intro {
+  max-width: 100%; 
+  margin-left: 0;
+}
+
+/* La categoria (Photography & Art Direction) */
+.project-category {
+  display: block;
+  font-size: 0.75rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Il titolo del progetto (Faces & Frames) */
+.project-title {
+  font-family: 'Times New Roman', serif; /* Il tuo tocco classico */
+  font-size: 2.8rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #111;
+  margin: 0 0 25px 0;
+  line-height: 1.1;
+}
+
+/* Il paragrafo descrittivo */
+.project-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+  font-weight: 400;
+  margin: 0;
+  
+  /* Crea 2 colonne su desktop */
+  column-count: 2; 
+  
+  /* AUMENTATO: Più spazio per far respirare la linea */
+  column-gap: 60px; 
+  
+  /* NUOVO: La linea verticale separatrice */
+  /* Spessore | Stile | Colore (un grigio chiaro elegante) */
+  column-rule: 1px solid #ddd; 
+
+  /* --- NUOVO: Giustificato PRO --- */
+  text-align: justify; /* Allinea a destra e sinistra */
+  hyphens: auto;       /* FONDAMENTALE: Spezza le parole a capo per evitare buchi enormi */
+  -webkit-hyphens: auto; /* Per Safari/Mac */
 }
