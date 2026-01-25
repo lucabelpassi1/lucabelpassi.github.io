@@ -148,15 +148,6 @@ body{
   gap: 20px;
 }
 
-.link-text {
-  text-decoration: none;
-  color: #111;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: opacity 0.2s;
-}
-.link-text:hover { opacity: 0.6; }
-
 .divider{
   width: 100%;
   height: 1px;
@@ -361,86 +352,187 @@ body{
 .footer-ig svg{opacity:.7;transition:.25s}
 .footer-ig:hover svg{opacity:1}
 
-/* -------------- ABOUT PAGE -------------- */
+/* -------------- ABOUT PAGE STYLING -------------- */
+
 .about-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: flex-start; /* Testo allineato in alto */
-  padding: 60px 0;
+  grid-template-columns: 1fr 1fr; /* 50% Foto - 50% Testo */
+  gap: 80px; /* Molto spazio tra i due blocchi per eleganza */
+  align-items: center; /* Centra verticalmente il testo */
+  
+  max-width: 1200px; /* Larghezza massima come il resto del sito */
+  margin: 0 auto;
+  padding: 60px 24px 100px 24px; /* Padding coerente */
 }
 
+/* FOTO */
 .about-img img {
   width: 100%;
   height: auto;
   display: block;
-  filter: grayscale(100%); /* Opzionale: Foto in B/N automatica */
-  transition: filter 0.5s ease;
+  /* Un leggero contrasto per dare profondità */
+  filter: contrast(1.05); 
 }
 
-.about-img img:hover {
-  filter: grayscale(0%); /* Torna a colori al passaggio del mouse */
+/* TESTO */
+.about-text {
+  /* Evita che il testo tocchi troppo i bordi */
+  padding-right: 20px;
 }
 
-.about-text h1 {
-  font-size: 3rem;
-  margin-top: 0;
+/* Etichetta piccola (Profile) */
+.about-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   margin-bottom: 20px;
-  line-height: 1;
+  font-weight: 600;
 }
 
+/* Titolo H1 */
+.about-text h1 {
+  font-size: 3rem; /* Grande */
+  margin: 0 0 30px 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+/* La citazione Serif (Il tocco di classe) */
+.editorial-quote {
+  font-family: 'Times New Roman', serif;
+  font-size: 1.8rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #111;
+  margin-bottom: 30px;
+  line-height: 1.3;
+}
+
+/* Paragrafi */
 .about-text p {
   font-size: 1rem;
-  line-height: 1.8; /* Molto leggibile */
+  line-height: 1.7; /* Interlinea ariosa */
   color: #444;
   margin-bottom: 20px;
 }
 
-/* -------------- CONTACT PAGE -------------- */
-.contact-wrap {
-  min-height: 60vh; /* Centra verticalmente nello schermo */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 40px 0;
+/* Sezione finale (Available...) */
+.about-footer {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid #eee; /* Una riga sottile separatrice */
 }
 
-.contact-wrap h1 {
-  font-size: 3.5rem;
+.about-footer p {
+  font-weight: 600;
+  color: #111;
   margin-bottom: 10px;
 }
 
-.contact-desc {
-  font-size: 1.1rem;
-  color: #666;
-  margin-bottom: 40px;
-  max-width: 500px;
-}
-
-.contact-links {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-/* Un bottone "Outline" per l'email */
-.btn-outline {
-  display: inline-block;
-  padding: 12px 24px;
-  border: 1px solid #111;
+.btn-text, .link-text {
   text-decoration: none;
   color: #111;
   font-size: 0.9rem;
-  letter-spacing: 1px;
+  border-bottom: 1px solid #111; /* Sottolineatura custom */
+  padding-bottom: 3px;
   transition: all 0.2s ease;
 }
 
-.btn-outline:hover {
-  background: #111;
+.link-text:hover,
+.btn-text:hover {
+  opacity: 0.6;
+  padding-bottom: 5px; /* Piccolo movimento in alto dell'hover (opzionale) */
+}
+
+/* -------------- CONTACT PAGE: CENTERED LAYOUT -------------- */
+
+.contact-wrap {
+  max-width: 800px; /* Più stretto per non far disperdere il testo */
+  margin: 0 auto;
+  padding: 120px 24px 80px 24px; /* Tanto spazio sopra per dare importanza */
+  
+  /* LA CHIAVE: Tutto centrato */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 1. L'ETICHETTA (Piccola, tecnica) */
+.meta-label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #999;
+  margin-bottom: 20px;
+}
+
+/* 2. IL TITOLO (Serif, elegante, fluido) */
+.editorial-headline {
+  font-family: 'Times New Roman', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.3;
+  color: #111;
+  margin-bottom: 50px;
+}
+
+/* 3. IL LINK PRINCIPALE (Sembra un bottone testuale) */
+.contact-action {
+  margin-bottom: 80px; /* Spazio prima dei dettagli finali */
+}
+
+.action-link {
+  font-family: 'Montserrat', sans-serif; /* Torniamo al moderno per il link */
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #111;
+  text-decoration: none;
+  
+  /* Bordo rettangolare sottile o solo sottolineatura? 
+     Proviamo il "Box" minimalista che dà struttura alla pagina */
+  border: 1px solid #111;
+  padding: 15px 30px;
+  transition: all 0.3s ease;
+}
+
+.action-link:hover {
+  background-color: #111;
   color: #fff;
+}
+
+/* 4. I DETTAGLI IN BASSO (Griglia centrata) */
+.contact-meta {
+  display: flex;
+  gap: 60px; /* Distanza tra Location e Instagram */
+  border-top: 1px solid #eee; /* Linea sottile che chiude */
+  padding-top: 40px;
+}
+
+.meta-item p, 
+.meta-link {
+  font-size: 0.9rem;
+  color: #111;
+  margin: 0;
+  text-decoration: none;
+}
+
+.meta-link {
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.meta-link:hover {
+  border-bottom: 1px solid #111;
 }
 
 /* -------------- LIGHTBOX THUMBNAILS -------------- */
@@ -540,14 +632,25 @@ body{
 
   /* 2. ABOUT PAGE: Impila foto e testo */
   .about-wrap {
-    grid-template-columns: 1fr; /* Una colonna */
-    gap: 40px;
-    padding: 40px 0;
+    grid-template-columns: 1fr; /* Una colonna unica */
+    gap: 50px;
+    padding: 40px 24px;
+    text-align: left;
   }
   
-  /* 3. CONTACT: Titolo più piccolo */
-  .contact-wrap h1 { font-size: 2.5rem; }
-
+  .about-text {
+    padding-right: 0; /* Rimuoviamo il padding destro inutile su mobile */
+  }
+  
+  .about-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .editorial-quote {
+    font-size: 1.5rem; /* Un po' più piccolo su mobile */
+  }
+  
+  
   .masonry-item {
     width: 50%; /* 2 COLONNE su Tablet */
   }
@@ -608,6 +711,14 @@ body{
   }
   .project-desc {
     column-count: 1;
+  }
+
+  .editorial-headline {
+    font-size: 1.8rem;
+  }
+  .contact-meta {
+    gap: 30px;
+    flex-direction: column; /* Uno sotto l'altro su mobile */
   }
 }
 
