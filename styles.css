@@ -656,6 +656,12 @@ body{
   .project-desc {
     font-size: 0.95rem; /* Leggermente più piccolo per leggere meglio */
     line-height: 1.5;
+    column-count: 1 !important; /* Forza una colonna */
+    column-gap: 0;              /* Azzera lo spazio extra */
+    column-rule: none;          /* FONDAMENTALE: Nasconde la linea verticale */
+    
+    text-align: left;           /* Meglio togliere il giustificato su mobile */
+    hyphens: manual;
   }
 }
 /* -------------- NEW GALLERY HEADER (Selected Works) -------------- */
