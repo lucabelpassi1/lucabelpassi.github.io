@@ -21,7 +21,7 @@
      Android: senza fallback ripiegava su font a caso, diverse per ogni utente).
      Se passi a una sola grottesca come dicevamo:
        --font-display: var(--font-body);
-     ...e togli i font-style: italic marcati con /* [display] */ qui sotto. */
+     ...e togli i font-style: italic marcati con [display] */ 
   --font-display: 'Times New Roman', 'Tinos', 'Liberation Serif', Times, serif;
 
   --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
