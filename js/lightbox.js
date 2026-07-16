@@ -1,105 +1,137 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const items = Array.from(document.querySelectorAll('.masonry-item img'));
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const thumbsContainer = document.getElementById('lightbox-thumbs');
+/* ============================================================
+   LIGHTBOX
+   Richiede nel CSS: .lightbox { display:none } e .lightbox.is-open { display:flex }
+   (niente più display inline via JS)
+   ============================================================ */
 
-  const closeBtn = document.querySelector('.lightbox-close');
-  const nextBtn = document.querySelector('.lightbox-next');
-  const prevBtn = document.querySelector('.lightbox-prev');
+(() => {
+  const lightbox = document.getElementById('lightbox');
+  const grid = document.querySelector('.masonry');
+  if (!lightbox || !grid) return;
+
+  const items = Array.from(grid.querySelectorAll('.masonry-item img'));
+  if (!items.length) return;
+
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn  = lightbox.querySelector('.lightbox-prev');
+  const nextBtn  = lightbox.querySelector('.lightbox-next');
+  const focusables = [closeBtn, prevBtn, nextBtn];
 
   let current = 0;
+  let isOpen = false;
+  let lastFocused = null;
+  let scrollY = 0;
 
-  // 1. GENERA LE MINIATURE (Thumbnails)
-  items.forEach((img, index) => {
-    const thumb = document.createElement('img');
-    thumb.src = img.src; // Usa la stessa sorgente della gallery (leggera)
-    thumb.alt = `Thumb ${index}`;
-    
-    // Cliccando la miniatura, apri quella foto
-    thumb.addEventListener('click', (e) => {
-      e.stopPropagation(); // Evita click indesiderati
-      openLightbox(index);
+  // Usa data-full se c'è (versione grande), altrimenti quella della griglia
+  const fullSrc = (img) => img.dataset.full || img.currentSrc || img.src;
+
+  // Scarica in anticipo la foto successiva e precedente: la navigazione diventa istantanea
+  const preload = (i) => {
+    const img = items[(i + items.length) % items.length];
+    if (img) new Image().src = fullSrc(img);
+  };
+
+  function show(index) {
+    current = (index + items.length) % items.length;
+    const img = items[current];
+    lightboxImg.src = fullSrc(img);
+    lightboxImg.alt = img.alt || '';
+    preload(current + 1);
+    preload(current - 1);
+  }
+
+  function open(index) {
+    if (isOpen) return;
+    lastFocused = document.activeElement;
+
+    // Blocco scroll robusto (body.style.overflow non basta su iOS)
+    scrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+
+    show(index);
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    isOpen = true;
+    closeBtn.focus();
+  }
+
+  function close() {
+    if (!isOpen) return;
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImg.src = '';
+    lightboxImg.alt = '';
+    isOpen = false;
+
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollY);
+
+    if (lastFocused) lastFocused.focus();
+  }
+
+  const next = () => show(current + 1);
+  const prev = () => show(current - 1);
+
+  // --- Griglia: click + tastiera ---
+  items.forEach((img, i) => {
+    img.setAttribute('role', 'button');
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('aria-label', `Open image ${i + 1} of ${items.length}`);
+
+    img.addEventListener('click', () => open(i));
+    img.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open(i);
+      }
     });
-
-    thumbsContainer.appendChild(thumb);
   });
 
-  const allThumbs = thumbsContainer.querySelectorAll('img');
+  // --- Bottoni ---
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+  nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
 
-  // FUNZIONE: APRI LIGHTBOX
-  function openLightbox(index) {
-    current = index;
-    
-    // Carica immagine grande (usa data-full se c'è, altrimenti src)
-    const bigSrc = items[current].dataset.full || items[current].src;
-    lightboxImg.src = bigSrc;
-    
-    lightbox.style.display = 'flex';
-    document.body.style.overflow = 'hidden';
-    
-    updateActiveThumb();
-  }
-
-  // FUNZIONE: AGGIORNA MINIATURA ATTIVA
-  function updateActiveThumb() {
-    // Rimuovi classe active da tutte
-    allThumbs.forEach(t => t.classList.remove('active-thumb'));
-    
-    // Aggiungi alla corrente
-    if (allThumbs[current]) {
-      allThumbs[current].classList.add('active-thumb');
-      
-      // Scrolla la striscia per tenere la miniatura al centro
-      allThumbs[current].scrollIntoView({
-        behavior: 'smooth',
-        inline: 'center',
-        block: 'nearest'
-      });
-    }
-  }
-
-  function closeLightbox() {
-    lightbox.style.display = 'none';
-    lightboxImg.src = ''; 
-    document.body.style.overflow = '';
-  }
-
-  // Event Listeners Immagini Gallery
-  items.forEach((img, index) => {
-    img.addEventListener('click', () => openLightbox(index));
-  });
-
-  // Navigazione
-  const showNext = (e) => {
-    if(e) e.stopPropagation();
-    current = (current + 1) % items.length;
-    openLightbox(current);
-  };
-
-  const showPrev = (e) => {
-    if(e) e.stopPropagation();
-    current = (current - 1 + items.length) % items.length;
-    openLightbox(current);
-  };
-
-  nextBtn.onclick = showNext;
-  prevBtn.onclick = showPrev;
-  closeBtn.onclick = closeLightbox;
-
-  // Chiudi cliccando fuori
+  // --- Click sullo sfondo per chiudere ---
   lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
-      closeLightbox();
+    if (e.target === lightbox) close();
+  });
+
+  // --- Tastiera globale + focus trap ---
+  document.addEventListener('keydown', (e) => {
+    if (!isOpen) return;
+
+    if (e.key === 'Escape') { close(); return; }
+    if (e.key === 'ArrowRight') { e.preventDefault(); next(); return; }
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); prev(); return; }
+
+    // Tab non deve poter uscire dal lightbox
+    if (e.key === 'Tab') {
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
     }
   });
 
-  // Tastiera
-  document.addEventListener('keydown', (e) => {
-    if (lightbox.style.display === 'flex') {
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'ArrowLeft') showPrev();
-      if (e.key === 'Escape') closeLightbox();
-    }
-  });
-});
+  // --- Swipe su mobile ---
+  let touchX = null;
+  lightbox.addEventListener('touchstart', (e) => {
+    touchX = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  lightbox.addEventListener('touchend', (e) => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) (dx < 0 ? next() : prev());
+    touchX = null;
+  }, { passive: true });
+})();

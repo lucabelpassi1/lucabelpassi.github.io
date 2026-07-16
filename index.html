@@ -3,34 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <title>LUCA BELPASSI | Photography Portfolio</title>
-  
-  <meta name="description" content="Luca Belpassi Photography. Editorial portraiture and eyewear photography based in Italy. Explore a portfolio where human character meets design." />
-  
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="LUCA BELPASSI | Photography Portfolio">
-  <meta property="og:description" content="Editorial portraiture and eyewear photography based in Italy. Explore a portfolio where human character meets design.">
-  
-  <meta property="og:url" content="https://lucabelpassi.com/">
-  
-  <meta property="og:image" content="https://lucabelpassi.com/img/social-preview.webp">
 
+  <title>LUCA BELPASSI | Photography Portfolio</title>
+  <meta name="description" content="Luca Belpassi Photography. Editorial portraiture and eyewear photography based in Pistoia, Tuscany. A portfolio where human character meets design.">
+
+  <link rel="canonical" href="https://lucabelpassi.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Luca Belpassi">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="LUCA BELPASSI | Photography Portfolio">
+  <meta property="og:description" content="Editorial portraiture and eyewear photography based in Pistoia, Tuscany.">
+  <meta property="og:url" content="https://lucabelpassi.com/">
+  <meta property="og:image" content="https://lucabelpassi.com/img/social-preview.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portrait from the Faces & Frames series by Luca Belpassi.">
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="LUCA BELPASSI | Photography">
-  <meta name="twitter:description" content="Eyewear Photography Editorial Projects.">
-  <meta name="twitter:image" content="https://lucabelpassi.com/img/social-preview.webp">
+  <meta name="twitter:description" content="Editorial portraiture and eyewear photography.">
+  <meta name="twitter:image" content="https://lucabelpassi.com/img/social-preview.jpg">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
+
+  <!-- Fonts: preconnect prima, e TUTTI i pesi che il CSS usa davvero (500 e 600 mancavano) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="img/favicon.png"> 
-  <link rel="apple-touch-icon" href="img/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header fade-in">
     <div class="header-inner">
-      <div class="brand">LUCA BELPASSI</div>
-      <nav class="site-nav">
+      <a href="/" class="brand">LUCA BELPASSI</a>
+      <nav class="site-nav" aria-label="Main">
         <a href="/" aria-current="page">HOME</a>
         <a href="works.html">WORKS</a>
         <a href="about.html">ABOUT</a>
@@ -38,19 +55,22 @@
       </nav>
     </div>
   </header>
+
   <div class="site-wrap">
-    <main>
+    <main id="main">
+
       <section class="hero">
-        
         <div class="hero-inner fade-in-up">
+          <!-- NOTA: valuta di togliere l'etichetta "PORTFOLIO" oppure il corsivo qui sotto.
+               Averli entrambi + h1 sono tre livelli di titolo per due parole di contenuto. -->
           <span class="hero-subtitle">PORTFOLIO</span>
-          
+
           <h1>Eyewear Photography</h1>
-          
+
           <p class="hero-editorial-sub">
-            "Authentic stories. Iconic frames."
+            Authentic stories. Iconic frames.
           </p>
-          
+
           <div class="hero-cta">
             <a href="works.html" class="btn-text">
               View Selected Works &rarr;
@@ -59,25 +79,35 @@
         </div>
 
         <figure class="hero-image-wrap fade-in-delay">
-          <img src="img/occhiali/blusole.webp" alt="Eyewear Photography Editorial" loading="eager">
+          <!-- Il packshot Serengeti era la tua immagine più debole in apertura.
+               Qui va il tuo scatto migliore. In alternativa: img/people/armandomacchina.webp -->
+          <img src="img/people/annastudio-1800.webp"
+               alt="Riflesso nello specchio di una donna con caschetto biondo che prova una montatura cat-eye bianca in un ambiente luminoso."
+               width="1200" height="1500"
+               loading="eager" fetchpriority="high" decoding="async">
         </figure>
-        
       </section>
+
     </main>
 
     <footer class="site-footer fade-in">
       <section class="divider"></section>
       <div class="footer-inner">
-        <p>© 2025 Luca Belpassi — Photographer</p>
-        <a href="https://instagram.com/lucabelpassi" target="_blank" class="footer-ig" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <p>&copy; <span id="year">2026</span> Luca Belpassi &mdash; Photographer</p>
+        <a href="https://instagram.com/lucabelpassi" target="_blank" rel="noopener" class="footer-ig" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
             <path d="M7 2C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2H7ZM18 6C18.55 6 19 6.45 19 7C19 7.55 18.55 8 18 8C17.45 8 17 7.55 17 7C17 6.45 17.45 6 18 6ZM12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8Z"
-                  fill="#111"/>
+                  fill="currentColor"/>
           </svg>
         </a>
       </div>
     </footer>
 
   </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>

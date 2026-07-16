@@ -3,28 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <title>ABOUT | LUCA BELPASSI</title>
-  
-  <meta name="description" content="About Luca Belpassi. An Italian photographer specializing in the intersection of editorial portraiture and eyewear design. Available for assignments worldwide." />
+  <meta name="description" content="Luca Belpassi is a photographer based in Pistoia, Tuscany, working on editorial portraiture and eyewear campaigns.">
+
+  <link rel="canonical" href="https://lucabelpassi.com/about.html">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:site_name" content="Luca Belpassi">
+  <meta property="og:locale" content="en_GB">
   <meta property="og:title" content="ABOUT | LUCA BELPASSI">
+  <meta property="og:description" content="Photographer based in Pistoia, Tuscany. Editorial portraiture and eyewear campaigns.">
   <meta property="og:url" content="https://lucabelpassi.com/about.html">
-  
-  <meta property="og:type" content="website">
-  <meta property="og:description" content="About Luca Belpassi. An Italian photographer specializing in the intersection of editorial portraiture and eyewear design. Available for assignments worldwide.">
   <meta property="og:image" content="https://lucabelpassi.com/img/social-preview.jpg">
-  
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="img/favicon.png"> 
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portrait from the Faces & Frames series by Luca Belpassi.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ABOUT | LUCA BELPASSI">
+  <meta name="twitter:description" content="Photographer based in Pistoia, Tuscany.">
+  <meta name="twitter:image" content="https://lucabelpassi.com/img/social-preview.jpg">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="apple-touch-icon" href="img/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header fade-in">
     <div class="header-inner">
-      <div class="brand">LUCA BELPASSI</div>
-      <nav class="site-nav">
+      <a href="/" class="brand">LUCA BELPASSI</a>
+      <nav class="site-nav" aria-label="Main">
         <a href="/">HOME</a>
         <a href="works.html">WORKS</a>
         <a href="about.html" aria-current="page">ABOUT</a>
@@ -34,38 +54,60 @@
   </header>
 
   <div class="site-wrap">
-    <main>
-      
+    <main id="main">
+
       <section class="about-wrap">
-        
+
         <figure class="about-img fade-in-delay">
-          <img src="img/people/hero.webp" alt="Luca Belpassi Portrait"> 
+          <!-- SOSTITUISCI questa foto: in quella attuale sei dietro l'obiettivo
+               e non ti si vede la faccia. Serve una tua foto in cui si veda chi sei. -->
+          <img src="img/people/hero.webp"
+               alt="Luca Belpassi in piedi all'aperto con la sua fotocamera, ritratto in bianco e nero."
+               width="1000" height="1250"
+               loading="eager" fetchpriority="high" decoding="async">
         </figure>
 
         <div class="about-text fade-in-up">
-          
           <span class="about-label">Profile</span>
-          
+
           <h1>The Vision</h1>
-          
-          <h2 class="editorial-quote">
-            "Searching for the silent dialogue between light and character."
-          </h2>
-          
-          <p>
-            Based in Italy, Luca Belpassi moves between the precision of studio lighting and the spontaneity of the streets. Specializing in portrait and eyewear photography, his work is not just about capturing a subject, but about revealing an identity.
+
+          <!-- Era un h2 usato come citazione decorativa: semanticamente sbagliato,
+               non è un titolo di sezione. Ora è un <p>, lo stile lo dà la classe. -->
+          <p class="editorial-quote">
+            Searching for the silent dialogue between light and character.
           </p>
-          
+
+          <!-- ─── BOZZA — RISCRIVILA CON PAROLE TUE ──────────────────────────
+               Cosa cambia rispetto alla versione attuale:
+               - prima persona (il terzo singolare finge uno studio che non c'è)
+               - fatti specifici al posto di "intimate, authentic and timeless"
+               Tieni quello che è vero, butta il resto. -->
           <p>
-            Whether highlighting the architectural lines of a frame or the fleeting expression of a face, his approach remains the same: intimate, authentic, and timeless.
+            I have been photographing since I was fifteen. For the past few years
+            most of that work has been eyewear: frames, faces, and the odd
+            geometry that happens when the two meet.
           </p>
-          
+          <p>
+            Shooting campaigns for an optician taught me the thing a generalist
+            never learns — that a frame is a product with proportions, and that
+            the picture fails the moment you cannot see the eyes behind it.
+            The rest is casting, light, and staying out of the way.
+          </p>
+          <p>
+            I am based in Pistoia, Tuscany. I study computer science in Pisa and
+            built this site myself.
+          </p>
+          <!-- ──────────────────────────────────────────────────────────────── -->
+
           <div class="about-footer">
-            <p>Available for assignments worldwide.</p>
+            <!-- "Available for assignments worldwide" non ti porta clienti da Berlino.
+                 I tuoi clienti sono a trenta chilometri. -->
+            <p>Available for assignments in Tuscany and beyond.</p>
             <a href="contact.html" class="btn-text">Get in touch &rarr;</a>
           </div>
-
         </div>
+
       </section>
 
     </main>
@@ -73,12 +115,41 @@
     <footer class="site-footer fade-in">
       <section class="divider"></section>
       <div class="footer-inner">
-        <p>© 2025 Luca Belpassi — Photographer</p>
-        <a href="https://instagram.com/lucabelpassi" target="_blank" class="footer-ig">
-           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 2C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2H7ZM18 6C18.55 6 19 6.45 19 7C19 7.55 18.55 8 18 8C17.45 8 17 7.55 17 7C17 6.45 17.45 6 18 6ZM12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8Z" fill="#111"/></svg>
+        <p>&copy; <span id="year">2026</span> Luca Belpassi &mdash; Photographer</p>
+        <a href="https://instagram.com/lucabelpassi" target="_blank" rel="noopener" class="footer-ig" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <path d="M7 2C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2H7ZM18 6C18.55 6 19 6.45 19 7C19 7.55 18.55 8 18 8C17.45 8 17 7.55 17 7C17 6.45 17.45 6 18 6ZM12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8Z"
+                  fill="currentColor"/>
+          </svg>
         </a>
       </div>
     </footer>
+
   </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Dati strutturati: dice a Google chi sei e dove. Verifica i campi prima di pubblicare. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Luca Belpassi",
+    "jobTitle": "Photographer",
+    "url": "https://lucabelpassi.com/",
+    "image": "https://lucabelpassi.com/img/people/hero.webp",
+    "sameAs": ["https://instagram.com/lucabelpassi"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pistoia",
+      "addressRegion": "Toscana",
+      "addressCountry": "IT"
+    },
+    "knowsAbout": ["Eyewear photography", "Portrait photography"]
+  }
+  </script>
+
 </body>
 </html>

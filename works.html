@@ -3,25 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <title>WORKS | LUCA BELPASSI</title>
-  
-  <meta name="description" content="Explore the eyewear and portrait photography collection of Luca Belpassi. A curated selection of editorial shots, unique frames, and authentic faces." />
-  <meta property="og:title" content="WORKS | LUCA BELPASSI">
-  <meta property="og:url" content="https://lucabelpassi.com/works.html">
 
+  <title>WORKS | LUCA BELPASSI</title>
+  <meta name="description" content="Explore the eyewear and portrait photography collection of Luca Belpassi. A curated selection of editorial shots, unique frames, and authentic faces.">
+
+  <link rel="canonical" href="https://lucabelpassi.com/works.html">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Luca Belpassi">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="WORKS | LUCA BELPASSI">
   <meta property="og:description" content="Explore the eyewear and portrait photography collection of Luca Belpassi. A curated selection of editorial shots, unique frames, and authentic faces.">
-  <meta property="og:image" content="https://lucabelpassi.com/img/social-preview.webp"> <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="img/favicon.png"> 
+  <meta property="og:url" content="https://lucabelpassi.com/works.html">
+  <meta property="og:image" content="https://lucabelpassi.com/img/social-preview.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portrait from the Faces & Frames series by Luca Belpassi.">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WORKS | LUCA BELPASSI">
+  <meta name="twitter:description" content="Editorial eyewear and portrait photography.">
+  <meta name="twitter:image" content="https://lucabelpassi.com/img/social-preview.jpg">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="apple-touch-icon" href="img/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
     <div class="header-inner">
-      <div class="brand">LUCA BELPASSI</div>
-      <nav class="site-nav">
+      <a href="/" class="brand">LUCA BELPASSI</a>
+      <nav class="site-nav" aria-label="Main">
         <a href="/">HOME</a>
         <a href="works.html" aria-current="page">WORKS</a>
         <a href="about.html">ABOUT</a>
@@ -29,212 +54,201 @@
       </nav>
     </div>
   </header>
-  <div class="site-wrap">
-    <main>
-      <section class="gallery-header">
-        
-        <h1>Selected Works</h1>
-        
-        <div class="project-intro">
-          
-          <span class="project-category">
-            Photography & Art Direction
-          </span>
-          
-          <h2 class="project-title">
-            Faces & Frames
-          </h2>
-          
-          <p class="project-desc">
-            It is not just about wearing eyewear, but inhabiting it.<br> This project explores the silent dialogue between the geometry of design and the uniqueness of the human face. <br> Through light that caresses acetate textures and gazes that pierce the lens, the series tells stories of character, where every frame becomes a natural extension of the wearer.
-          </p>
 
+  <div class="site-wrap">
+    <main id="main">
+
+      <section class="gallery-header">
+        <h1>Selected Works</h1>
+
+        <div class="project-intro">
+          <span class="project-category">Photography &amp; Art Direction</span>
+
+          <h2 class="project-title">Faces &amp; Frames</h2>
+
+          <!-- I <br> sono spariti: dentro column-count spezzavano il testo in punti casuali.
+               Il flusso lo gestisce il browser. -->
+          <p class="project-desc">
+            It is not just about wearing eyewear, but inhabiting it. This project explores the
+            silent dialogue between the geometry of design and the uniqueness of the human face.
+            Through light that caresses acetate textures and gazes that pierce the lens, the
+            series tells stories of character, where every frame becomes a natural extension
+            of the wearer.
+          </p>
         </div>
-        
       </section>
 
       <section class="masonry-wrap">
         <div class="masonry">
 
-          <!-- MASONRY-->
-
-           <!-- 1 -->
-           <figure class="masonry-item">
-            <img src="img/people/lucaoutgood.webp" alt="Ritratto lifestyle all'aperto di un uomo con braccia tatuate e t-shirt bianca che si aggiusta gli occhiali da sole rettangolari scuri." loading="lazy">
+          <!-- 1 -->
+          <figure class="masonry-item">
+            <img src="img/people/armandomacchina-1200.webp"
+                 data-full="img/people/armandomacchina-1800.webp"
+                 alt="Uomo alla guida di un'auto con occhiali da sole dalla montatura trasparente, illuminato dalla luce che entra dal tetto apribile."
+                 loading="eager" decoding="async">
           </figure>
+
           <!-- 2 -->
           <figure class="masonry-item">
-            <img src="img/occhiali/soleluca.webp" alt="Occhiali da sole stile aviatore Serengeti con montatura tartarugata, doppio ponte e lenti verde oliva" loading="lazy">
+            <img src="img/people/ilaria-1200.webp"
+                 data-full="img/people/ilaria-1800.webp"
+                 alt="Ritratto ravvicinato di ragazza con maglione a collo alto bordeaux che indossa occhiali da vista geometrici esagonali con montatura viola e blu."
+                 loading="eager" decoding="async">
           </figure>
+
           <!-- 3 -->
           <figure class="masonry-item">
-            <img src="img/people/armandomacchina.webp" alt="Uomo alla guida dell'auto con occhiali da sole dalla montatura trasparente" loading="lazy">
+            <img src="img/people/annacolore-1200.webp"
+                 data-full="img/people/annacolore-1800.webp"
+                 alt="Donna con occhiali da sole oversize tartarugati dalla forma geometrica davanti a un murale coloratissimo."
+                 loading="eager" decoding="async">
           </figure>
+
           <!-- 4 -->
           <figure class="masonry-item">
-            <img src="img/people/annapurple.webp" alt="Primo piano di occhiali da vista vintage in metallo dorato stile anni 70"  loading="lazy">
+            <img src="img/people/patrickcap-1200.webp"
+                 data-full="img/people/patrickcap-1800.webp"
+                 alt="Ritratto street style con cappellino nero e grandi occhiali da vista neri spessi."
+                 loading="lazy" decoding="async">
           </figure>
+
+          <figure class="masonry-item">
+            <img src="img/occhiali/vistadragon-1200.webp"
+                 data-full="img/occhiali/vistadragon.webp"
+                 alt="Uomo sorridente in stile classico con gilet in tweed e camicia bianca, tocca la montatura dei suoi occhiali da sole marroni guardando in camera."
+                 loading="lazy" decoding="async">
+          </figure>
+
           <!-- 5 -->
           <figure class="masonry-item">
-            <img src="img/people/noemiquadro.webp" alt="Donna elegante con occhiali da vista neri forma cat-eye davanti a un dipinto classico" loading="lazy">
+            <img src="img/people/annastudio-1200.webp"
+                 data-full="img/people/annastudio-1800.webp"
+                 alt="Riflesso nello specchio di una donna con caschetto biondo che prova una montatura cat-eye bianca in un ambiente luminoso."
+                 loading="lazy" decoding="async">
           </figure>
+
           <!-- 6 -->
           <figure class="masonry-item">
-            <img src="img/people/ilaria.webp" alt="Ritratto ravvicinato di ragazza con maglione collo alto bordeaux che indossa occhiali da vista geometrici esagonali con montatura viola e blu." loading="lazy">
+            <img src="img/people/nicosolenero-1200.webp"
+                 data-full="img/people/nicosolenero-1800.webp"
+                 alt="Ritratto in interno di giovane uomo con giacca beige e camicia a righe che indossa spessi occhiali da vista neri rotondi."
+                 loading="lazy" decoding="async">
           </figure>
+
           <!-- 7 -->
           <figure class="masonry-item">
-            <img src="img/occhiali/soleble.webp" alt="Occhiali da sole ovali con montatura tartarugata scura, lenti marroni sfumate e dettagli dorati sulle astine." loading="lazy">
+            <img src="img/people/noemiquadro-1200.webp"
+                 data-full="img/people/noemiquadro-1800.webp"
+                 alt="Donna elegante con occhiali da vista neri a forma cat-eye davanti a un dipinto classico."
+                 loading="lazy" decoding="async">
           </figure>
+
           <!-- 8 -->
           <figure class="masonry-item">
-            <img src="img/people/patrickcap.webp" alt="Stile urban con giacca sportiva e occhiali da vista aviator neri a doppio ponte" loading="lazy">
+            <img src="img/people/lucaoutgood-1200.webp"
+                 data-full="img/people/lucaoutgood-1800.webp"
+                 alt="Ritratto lifestyle all'aperto di un uomo con braccia tatuate e t-shirt bianca che si aggiusta gli occhiali da sole rettangolari scuri."
+                 loading="lazy" decoding="async">
           </figure>
-          <!-- 9 -->
+
+          <!-- 9 — ALT DA SCRIVERE -->
           <figure class="masonry-item">
-            <img src="img/people/vincenzo.webp" alt="Uomo sorridente in stile classico con gilet in tweed e camicia bianca, tocca la montatura dei suoi occhiali da sole marroni guardando in camera." loading="lazy">
+            <img src="img/people/dianametal-1200.webp"
+                 data-full="img/people/dianametal-1800.webp"
+                 alt="TODO"
+                 loading="lazy" decoding="async">
           </figure>
+
           <!-- 10 -->
           <figure class="masonry-item">
-            <img src="img/people/matteo.webp" alt="Giovane uomo con capelli ricci e giacca blu elegante in posa all'esterno, indossa occhiali da sole scuri con lenti leggermente azzurrate." loading="lazy">
+            <img src="img/people/vincenzo-1200.webp"
+                 data-full="img/people/vincenzo-1800.webp"
+                 alt="Uomo sorridente in stile classico con gilet in tweed e camicia bianca, tocca la montatura dei suoi occhiali da sole marroni guardando in camera."
+                 loading="lazy" decoding="async">
           </figure>
+
           <!-- 11 -->
           <figure class="masonry-item">
-            <img src="img/occhiali/solejngreen.webp" alt="Occhiali da vista con montatura vintage in metallo argentato stile anni 70" loading="lazy">
+            <img src="img/people/matteodentro-1200.webp"
+                 data-full="img/people/matteodentro-1800.webp"
+                 alt="Donna bionda indossa occhiali da sole sportivi a mascherina con lenti specchiate rosse e montatura bianca."
+                 loading="lazy" decoding="async">
           </figure>
+
           <!-- 12 -->
           <figure class="masonry-item">
-            <img src="img/people/noemiblack.webp" alt="Foto ritratto frontale minimalista di ragazza con lunghi capelli mossi che indossa occhiali da vista neri dalla forma arrotondata su sfondo bianco." loading="lazy">
+            <img src="img/people/annagrunge-1200.webp"
+                 data-full="img/people/annagrunge-1800.webp"
+                 alt="Ottica sorridente appoggiata al bancone del negozio con occhiali da vista in metallo sottile."
+                 loading="lazy" decoding="async">
           </figure>
-          <!-- 13 -->
-          <figure class="masonry-item">
-            <img src="img/people/annacap.webp" alt="Ritratto street style con cappellino nero e grandi occhiali da vista neri spessi" loading="lazy">
-          </figure>
-           <!-- 14 -->
-          <figure class="masonry-item">
-            <img src="img/people/dianadentro.webp" alt="Primo piano di donna con capelli corti biondi che indossa occhiali da vista spessi color bordeaux, con le mani sul viso e un maglione fantasia." loading="lazy">
-          </figure>
-           <!-- 15 -->
-          <figure class="masonry-item">
-            <img src="img/occhiali/solejnorange.webp" alt="Occhiali da sole geometrici con doppio ponte, montatura viola trasparente e lenti azzurre chiare." loading="lazy">
-          </figure>
-           <!-- 16 -->
-          <figure class="masonry-item">
-            <img src="img/occhiali/vistadragon.webp" alt="Montatura da vista nera spessa in acetato con forma quadrata geometrica e design italiano artigianale." loading="lazy">
-          </figure>
-          <!-- 17 -->
-          <figure class="masonry-item">
-            <img src="img/people/nicosolenero.webp" alt="Ritratto in interno di giovane professionista con giacca beige e camicia a righe che indossa spessi occhiali da vista neri rotondi." loading="lazy">
-          </figure>
-          <!-- 18 -->
-          <figure class="masonry-item">
-            <img src="img/people/annacolore.webp" alt="Donna con occhiali da sole oversize tartarugati dalla forma geometrica su sfondo artistico colorato" loading="lazy">
-          </figure>
-          <!-- 19 -->
-          <figure class="masonry-item">
-            <img src="img/people/armandolegge.webp" alt="Uomo che legge un catalogo indossando occhiali da vista bianchi dalla forma esagonale" loading="lazy">
-          </figure>
-          <!-- 20 -->
-          <figure class="masonry-item">
-            <img src="img/occhiali/vistabolon.webp" alt="Occhiali da sole oversize quadrati con montatura spessa sfumata color malva e lenti degradé." loading="lazy">
-          </figure>
-           <!-- 21 -->
-          <figure class="masonry-item">
-            <img src="img/people/lucalegge.webp" alt="Uomo in giacca verde smeraldo che legge una rivista all'interno di un negozio di ottica, indossando occhiali da vista rettangolari tartarugati." loading="lazy">
-          </figure>
-           <!-- 22 -->
-          <figure class="masonry-item">
-            <img src="img/people/anna80s.webp" alt="Donna in stile edgy con giacca argentata metallizzata e tatuaggi, indossa occhiali da sole neri cat-eye sotto una luce solare diretta con ombre di foglie sullo sfondo." loading="lazy">
-          </figure>
-           <!-- 23 -->
-          <figure class="masonry-item">
-            <img src="img/people/matteodentro.webp"alt="Donna bionda indossa occhiali da sole sportivi a mascherina con lenti specchiate rosse e montatura bianca" loading="lazy">
-          </figure>
-           <!-- 24 -->
-          <figure class="masonry-item">
-            <img src="img/people/annastudio.webp" alt="Riflesso nello specchio di una donna con caschetto biondo che prova una montatura di occhiali bianca stile cat-eye in un ambiente luminoso." loading="lazy">
-          </figure>
-           <!-- 25 -->
-          <figure class="masonry-item">
-            <img src="img/people/nicovistanero.webp" alt="Donna con occhiali da vista rotondi di design con montatura grigia spessa" loading="lazy">
-          </figure>
-          <!-- 26 -->
-          <figure class="masonry-item">
-            <img src="img/people/annagrunge.webp" alt="Ottica sorridente appoggiata al bancone del negozio con occhiali da vista in metallo sottile" loading="lazy">
-          </figure>
-          <!-- 27 -->
-          <figure class="masonry-item">
-            <img src="img/occhiali/blusole.webp" alt="Occhiali da vista con montatura geometrica esagonale color marrone cioccolato lucido." loading="lazy">
-          </figure>
-          <!-- 28 -->
-          <figure class="masonry-item">
-            <img src="img/occhiali/solejnnero.webp" alt="Occhiali da sole sportivi rettangolari con montatura nera opaca e lenti tecniche verdi Serengeti." loading="lazy">
-          </figure>
-          <!-- 29 -->
-          <figure class="masonry-item">
-            <img src="img/people/annawonka.webp" alt="Occhiali da sole sportivi rettangolari con montatura nera opaca e lenti tecniche verdi Serengeti." loading="lazy">
-          </figure>
-          <!-- 30 -->
-          <figure class="masonry-item">
-            <img src="img/people/patrickcaffe.webp" alt="Occhiali da sole sportivi rettangolari con montatura nera opaca e lenti tecniche verdi Serengeti." loading="lazy">
-          </figure>
-          <!-- 31 -->
-          <figure class="masonry-item">
-            <img src="img/people/nicovistablu.webp" alt="Occhiali da sole sportivi rettangolari con montatura nera opaca e lenti tecniche verdi Serengeti." loading="lazy">
-          </figure>
-          <!-- 32 -->
-          <figure class="masonry-item">
-            <img src="img/occhiali/vistaice.webp" alt="Occhiali da sole sportivi rettangolari con montatura nera opaca e lenti tecniche verdi Serengeti." loading="lazy">
-          </figure>
-          <!-- 33 -->
-          <figure class="masonry-item">
-            <img src="img/people/annabici.webp" alt="Occhiali da sole sportivi rettangolari con montatura nera opaca e lenti tecniche verdi Serengeti." loading="lazy">
-          </figure>
-          <!-- 34 -->
-          <figure class="masonry-item">
-            <img src="img/people/dianametal.webp" alt="Occhiali da sole sportivi rettangolari con montatura nera opaca e lenti tecniche verdi Serengeti." loading="lazy">
-          </figure>
-          <!-- 34 -->
-          <figure class="masonry-item">
-            <img src="img/occhiali/solemary.webp" alt="Occhiali da sole sportivi rettangolari con montatura nera opaca e lenti tecniche verdi Serengeti." loading="lazy">
-          </figure>
-          <!-- 33 -->
-          
-          <!-- 34 -->
-          
-          
 
-          <!-- fine blocco MASONRY -->
+          <!-- 13 — ALT DA SCRIVERE -->
+          <figure class="masonry-item">
+            <img src="img/people/patrickcaffe-1200.webp"
+                 data-full="img/people/patrickcaffe-1800.webp"
+                 alt="TODO"
+                 loading="lazy" decoding="async">
+          </figure>
+
+          <!-- 14 — NOME FILE DA VERIFICARE: "nicogreen" non esiste nel vecchio works.html.
+                    I file "nico" erano: nicosolenero, nicovistanero, nicovistablu.
+                    ALT DA SCRIVERE -->
+          <figure class="masonry-item">
+            <img src="img/people/nicogreen-1200.webp"
+                 data-full="img/people/nicogreen-1800.webp"
+                 alt="TODO"
+                 loading="lazy" decoding="async">
+          </figure>
+
+          <figure class="masonry-item">
+            <img src="img/occhiali/vistaice-1200.webp"
+                 data-full="img/occhiali/vistaice.webp"
+                 alt="Uomo sorridente in stile classico con gilet in tweed e camicia bianca, tocca la montatura dei suoi occhiali da sole marroni guardando in camera."
+                 loading="lazy" decoding="async">
+          </figure>
+
         </div>
       </section>
 
       <!-- LIGHTBOX -->
-      <div id="lightbox" class="lightbox" aria-hidden="true">
-  
-        <button class="lightbox-close">&times;</button>
-        <button class="lightbox-prev">‹</button>
-        <button class="lightbox-next">›</button>
-        
+      <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+
+        <button type="button" class="lightbox-close" aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+            <path d="M5 5 L19 19 M19 5 L5 19"/>
+          </svg>
+        </button>
+
+        <button type="button" class="lightbox-prev" aria-label="Previous image">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+            <path d="M15 4 L7 12 L15 20"/>
+          </svg>
+        </button>
+
+        <button type="button" class="lightbox-next" aria-label="Next image">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" focusable="false">
+            <path d="M9 4 L17 12 L9 20"/>
+          </svg>
+        </button>
+
         <div class="lightbox-content">
           <img id="lightbox-img" src="" alt="">
         </div>
-
-        <div class="lightbox-thumbs" id="lightbox-thumbs">
-          </div>
 
       </div>
 
     </main>
 
     <footer class="site-footer">
-    <section class="divider"></section>
-
+      <section class="divider"></section>
       <div class="footer-inner">
-        <p>© 2025 Luca Belpassi — Photographer</p>
-        <a href="https://instagram.com/lucabelpassi" target="_blank" class="footer-ig" aria-label="Instagram">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <p>&copy; <span id="year">2026</span> Luca Belpassi &mdash; Photographer</p>
+        <a href="https://instagram.com/lucabelpassi" target="_blank" rel="noopener" class="footer-ig" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
             <path d="M7 2C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2H7ZM18 6C18.55 6 19 6.45 19 7C19 7.55 18.55 8 18 8C17.45 8 17 7.55 17 7C17 6.45 17.45 6 18 6ZM12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8Z"
-                  fill="#111"/>
+                  fill="currentColor"/>
           </svg>
         </a>
       </div>
@@ -242,43 +256,28 @@
 
   </div>
 
-<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js" defer></script>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" defer></script>
+  <script src="js/lightbox.js" defer></script>
 
-<script src="js/lightbox.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    
-    // Selezioniamo il contenitore delle foto
-    var grid = document.querySelector('.masonry');
-    
-    // Controllo di sicurezza: se la griglia esiste, eseguiamo il codice
-    if (grid) {
-      
-      // imagesLoaded: Aspetta che TUTTE le foto (pesanti) siano scaricate
-      imagesLoaded( grid, function() {
-        
-        // 1. Inizializza Masonry (calcola le posizioni)
-        var msnry = new Masonry( grid, {
+    window.addEventListener('load', function () {
+      var grid = document.querySelector('.masonry');
+      if (!grid || typeof Masonry === 'undefined') return;
+
+      imagesLoaded(grid, function () {
+        var msnry = new Masonry(grid, {
           itemSelector: '.masonry-item',
-          percentPosition: true, // Importante per il responsive
-          transitionDuration: '0.2s' // Durata animazione spostamento
+          percentPosition: true,
+          transitionDuration: '0.2s'
         });
-
-        // 2. IL FIX MAGICO:
-        // Aggiunge la classe .loaded al CSS (opacity: 1)
-        // Le foto appaiono dolcemente solo ORA che sono ordinate
-        grid.classList.add('loaded'); 
-        
-        // Forza un ricalcolo finale per sicurezza
+        grid.classList.add('loaded');
         msnry.layout();
-        
       });
-    }
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
-

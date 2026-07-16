@@ -3,28 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <title>CONTACT | LUCA BELPASSI</title>
-  
-  <meta name="description" content="Get in touch with Luca Belpassi for bookings, collaborations, and prints.">
-  <meta property="og:title" content="CONTACT | LUCA BELPASSI">
-  <meta property="og:url" content="https://lucabelpassi.com/contact.html">
-  
+  <meta name="description" content="Get in touch with Luca Belpassi for bookings, collaborations, and prints. Based in Pistoia, Tuscany.">
+
+  <link rel="canonical" href="https://lucabelpassi.com/contact.html">
+
   <meta property="og:type" content="website">
-  <meta property="og:description" content="Get in touch with Luca Belpassi for bookings, collaborations, and prints.">
-  <meta property="og:image" content="https://lucabelpassi.com/img/social-preview.webp">
-  
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/png" href="img/favicon.png"> 
+  <meta property="og:site_name" content="Luca Belpassi">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:title" content="CONTACT | LUCA BELPASSI">
+  <meta property="og:description" content="Get in touch for bookings, collaborations, and prints.">
+  <meta property="og:url" content="https://lucabelpassi.com/contact.html">
+  <meta property="og:image" content="https://lucabelpassi.com/img/social-preview.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Portrait from the Faces & Frames series by Luca Belpassi.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CONTACT | LUCA BELPASSI">
+  <meta name="twitter:description" content="Get in touch for bookings, collaborations, and prints.">
+  <meta name="twitter:image" content="https://lucabelpassi.com/img/social-preview.jpg">
+
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="apple-touch-icon" href="img/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header fade-in">
     <div class="header-inner">
-      <div class="brand">LUCA BELPASSI</div>
-      <nav class="site-nav">
+      <a href="/" class="brand">LUCA BELPASSI</a>
+      <nav class="site-nav" aria-label="Main">
         <a href="/">HOME</a>
         <a href="works.html">WORKS</a>
         <a href="about.html">ABOUT</a>
@@ -34,34 +54,50 @@
   </header>
 
   <div class="site-wrap">
-    <main>
-      
+    <main id="main">
+
       <section class="contact-wrap contact-center fade-in-up">
-        
+
         <div class="contact-intro">
           <span class="meta-label">General Inquiries</span>
-          
           <h1 class="editorial-headline">
-            Are you interested in a collaboration, a print, or simply want to say hello?
+            Interested in a collaboration, a print, or simply want to say hello?
           </h1>
         </div>
 
         <div class="contact-action">
+          <!-- "Email the Studio" → hai 22 anni e lavori da solo. "Write to me" è più forte
+               perché è vero, e stona meno con la sincerità delle foto. -->
           <a href="mailto:studio@lucabelpassi.com" class="action-link">
-            Email the Studio
+            Write to me
           </a>
+
+          <!-- L'indirizzo IN CHIARO: i mailto hanno conversione pessima
+               (mobile senza client configurato = non succede niente).
+               Chi usa Gmail nel browser lo copia e basta. -->
+          <p class="contact-email">
+            <a href="mailto:studio@lucabelpassi.com">studio@lucabelpassi.com</a>
+          </p>
         </div>
 
         <div class="contact-meta">
           <div class="meta-item">
             <span class="meta-label">Base</span>
-            <p>Italy / Worldwide</p>
+            <!-- "Italy / Worldwide" non dice niente. Chi cerca un fotografo cerca DOVE sei. -->
+            <p>Pistoia, Tuscany</p>
           </div>
-          
           <div class="meta-item">
             <span class="meta-label">Connect</span>
-            <a href="https://instagram.com/lucabelpassi" target="_blank" class="meta-link">Instagram</a>
+            <a href="https://instagram.com/lucabelpassi" target="_blank" rel="noopener" class="meta-link">Instagram</a>
           </div>
+        </div>
+
+        <!-- La pagina era vuota per tre quarti di schermo: sembra un sito abbandonato.
+             Tre miniature che rimandano a Works la chiudono e riportano l'occhio sulle foto. -->
+        <div class="contact-gallery">
+          <a href="works.html"><img src="img/people/vincenzo-1200.webp" alt="Riflesso nello specchio di una donna che prova una montatura cat-eye bianca." loading="lazy" decoding="async"></a>
+          <a href="works.html"><img src="img/people/dianametal-1200.webp" alt="Uomo alla guida di un'auto con occhiali da sole dalla montatura trasparente." loading="lazy" decoding="async"></a>
+          <a href="works.html"><img src="img/people/patrickcaffe-1200.webp" alt="Donna con giacca argentata e occhiali da sole cat-eye sotto ombre di foglie." loading="lazy" decoding="async"></a>
         </div>
 
       </section>
@@ -71,12 +107,21 @@
     <footer class="site-footer fade-in">
       <section class="divider"></section>
       <div class="footer-inner">
-        <p>© 2025 Luca Belpassi — Photographer</p>
-        <a href="https://instagram.com/lucabelpassi" target="_blank" class="footer-ig">
-           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M7 2C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2H7ZM18 6C18.55 6 19 6.45 19 7C19 7.55 18.55 8 18 8C17.45 8 17 7.55 17 7C17 6.45 17.45 6 18 6ZM12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8Z" fill="#111"/></svg>
+        <p>&copy; <span id="year">2026</span> Luca Belpassi &mdash; Photographer</p>
+        <a href="https://instagram.com/lucabelpassi" target="_blank" rel="noopener" class="footer-ig" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <path d="M7 2C4.24 2 2 4.24 2 7V17C2 19.76 4.24 22 7 22H17C19.76 22 22 19.76 22 17V7C22 4.24 19.76 2 17 2H7ZM18 6C18.55 6 19 6.45 19 7C19 7.55 18.55 8 18 8C17.45 8 17 7.55 17 7C17 6.45 17.45 6 18 6ZM12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8Z"
+                  fill="currentColor"/>
+          </svg>
         </a>
       </div>
     </footer>
+
   </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
