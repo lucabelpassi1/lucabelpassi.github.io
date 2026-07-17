@@ -673,7 +673,7 @@ html {
 
 /* --- Mobile stretto --- */
 @media (max-width: 600px) {
-  .site-wrap { padding: 0 12px; }
+  .site-wrap { padding: 0 24px; }
 
   .masonry { margin: 0 -5px; }
   .masonry-item {
