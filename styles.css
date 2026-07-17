@@ -12,7 +12,7 @@
 
   --wrap: 1200px;
   --pad: 24px;
-  --header-h: 80px;
+  --header-h: 70px;
 
   --font-body: 'Montserrat', system-ui, -apple-system, sans-serif;
 
@@ -261,7 +261,7 @@ html {
   width: 100%;
   max-width: var(--wrap);
   margin: 0 auto;
-  padding: 40px 0;
+  padding: 32px 0 40px;
   overflow: hidden;
 }
 
@@ -351,21 +351,16 @@ html {
 
 /* -------------- GALLERY HEADER -------------- */
 .gallery-header {
-  text-align: left;
-  padding: 40px 0 20px;
+  display: block;
+  margin: 0;
+  padding: 24px 0 0;
   width: 100%;
 }
 
-.gallery-header h1 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: var(--ink);
-  margin: 0 0 30px;
-  line-height: 1.2;
-}
+.project-heading,
+.project-desc { padding: 0; }
 
-.project-intro { max-width: 100%; }
+.project-desc { max-width: 62ch; }
 
 .project-category {
   display: block;
@@ -391,12 +386,10 @@ html {
   line-height: 1.7;
   color: var(--ink-soft);
   margin: 0;
+  max-width: 70ch;
+  text-wrap: balance;        
   column-count: 1;
   column-gap: 60px;
-
-  /* Era justify + hyphens:auto → produceva "be-/comes".
-     Sul mobile l'avevi già disattivato: sapevi che era un problema.
-     column-rule tolto: la linea verticale è un'altra citazione da giornale. */
   text-align: left;
   hyphens: manual;
 }
@@ -601,6 +594,7 @@ html {
 /* --- Tablet / laptop piccoli --- */
 @media (max-width: 900px) {
   .hero {
+    min-height: auto;
     grid-template-columns: 1fr;
     text-align: center;
     padding: 40px 0;
@@ -609,9 +603,12 @@ html {
   .hero-inner h1 { font-size: 3rem; }
   .hero-cta { justify-content: center; }
 
+  .hero-image-wrap {
+    order: -1;
+  }
   .hero-image-wrap img {
-    aspect-ratio: 4 / 3;
-    max-height: 60vh;
+    aspect-ratio: 4 / 5;
+    max-height: 70vh;
   }
 
   .about-wrap {
@@ -629,7 +626,7 @@ html {
 
 /* --- Mobile --- */
 @media (max-width: 768px) {
-  body { padding-top: 110px; }
+  body { padding-top: 80px; }
 
   .header-inner {
     flex-direction: column;
@@ -660,7 +657,13 @@ html {
 
   .contact-wrap { padding-top: 60px; }
   .contact-meta { gap: 30px; flex-direction: column; }
-  .contact-gallery { margin-top: 60px; gap: 8px; }
+  .contact-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 60px;
+    gap: 8px;
+  }
+  .contact-gallery a:last-child { grid-column: span 2; }
+  .contact-gallery a:last-child img { aspect-ratio: 16 / 10;  object-position: center 45%}
 
   /* Tap target: 44px minimi, e le frecce non devono coprire la foto */
   .lightbox-close,
@@ -681,7 +684,7 @@ html {
   .hero-inner h1 { font-size: 2.2rem; }
   .hero-editorial-sub { font-size: 1.3rem; }
 
-  .gallery-header { padding: 20px 0 30px; }
+  .gallery-header { padding: 24px 0 0; }
   .project-title { font-size: 2rem; }
   .project-desc { font-size: 0.95rem; line-height: 1.6; }
 }
